@@ -1,13 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Welcome</title>
 </head>
 <body>
-Hi!
+<h1>Welcome!</h1>
+	<form action="success" method="post">
+		User Name: <input type="text" name="uName" required><br>
+		Password: <input type="text" name="password" required><br>
+		<input type="submit" value="Sign-In">
+	</form>
+	<a href="http://localhost:8080/NeighborhoodSamaritan/registration">Sign Up!</a>
+	
 ${message}
 </body>
 </html>
