@@ -21,7 +21,7 @@
     <input type="submit" value="Volunteer" />
 </form>
 <br>
-<form action="success.html">
+<form action="mainmenu.html">
     <input type="submit" value="Return" />
 </form>
 </body>

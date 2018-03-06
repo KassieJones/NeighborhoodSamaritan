@@ -34,6 +34,34 @@ public class HomeController {
 		return new ModelAndView("success", "message", message);
 	}
 	
+	@RequestMapping("/mainmenu")
+	public ModelAndView menuPage() {
+		String message = "";
+
+		return new ModelAndView("mainmenu", "message", message);
+	}
+	
+	@RequestMapping("/searchkeyword")
+	public ModelAndView keywordPage() {
+		String message = "";
+
+		return new ModelAndView("searchkeyword", "message", message);
+	}
+	
+	@RequestMapping("/searchlocation")
+	public ModelAndView locationPage() {
+		String message = "";
+
+		return new ModelAndView("searchlocation", "message", message);
+	}
+	
+	@RequestMapping("/viewaccount")
+	public ModelAndView accountPage() {
+		String message = "";
+
+		return new ModelAndView("viewaccount", "message", message);
+	}
+	
 	@RequestMapping("/submitrequest")
 	public ModelAndView requestPage() {
 		String message = "";

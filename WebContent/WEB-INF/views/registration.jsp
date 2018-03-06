@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>Register!</h1>
-	<form action="success" method="post">
+	<form action="mainmenu" method="post">
 		User Name: <input type="text" name="uName"><br>
 		E-mail: <input type="text" name="eMail"><br>
 		Password: <input type="password" name="password"><br>

@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>Welcome!</h1>
-	<form action="success" method="post">
+	<form action="mainmenu" method="post">
 		User Name: <input type="text" name="uName" required><br>
 		Password: <input type="text" name="password" required><br>
 		<input type="submit" value="Sign-In">
