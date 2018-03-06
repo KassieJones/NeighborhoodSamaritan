@@ -16,6 +16,13 @@
 <p>Estimated Length of Task</p>
 <p>Required Skills</p>
 
-<a href="taskaccepted.html" class="button">Volunteer</a>     <a href="success.html" class="button">Return</a>
+
+<form action="taskaccepted.html">
+    <input type="submit" value="Volunteer" />
+</form>
+<br>
+<form action="success.html">
+    <input type="submit" value="Return" />
+</form>
 </body>
 </html>

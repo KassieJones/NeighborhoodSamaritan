@@ -12,7 +12,9 @@
 
 <p>insert contact option</p>
 
-<a href="success.html" class="button">Return</a>
+<form action="success.html">
+    <input type="submit" value="Return" />
+</form>
 
 </body>
 </html>
