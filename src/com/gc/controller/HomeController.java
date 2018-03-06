@@ -6,7 +6,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 /**
  * 
- * @author James Drain
+ * @author James Drain Nikki Shah David Musko Kassie Jones
  *
  */
 
@@ -14,10 +14,23 @@ import org.springframework.web.servlet.ModelAndView;
 public class HomeController {
 
 	@RequestMapping("/welcome")
-	public ModelAndView helloWorld() {
+	public ModelAndView welcomePage() {
 
-		String message = "<br><div style='text-align:center;'>"
-				+ "<h3>This message is coming from HomeController.java</h3>";
+		String message = "";
 		return new ModelAndView("welcome", "message", message);
+	}
+
+	@RequestMapping("/registration")
+	public ModelAndView registrationPage() {
+		String message = "";
+
+		return new ModelAndView("registration", "message", message);
+	}
+
+	@RequestMapping("/success")
+	public ModelAndView successPage() {
+		String message = "";
+
+		return new ModelAndView("success", "message", message);
 	}
 }
