@@ -13,12 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class SearchController {
 	
-	@RequestMapping("/searchkeyword")
-	public ModelAndView keywordPage() {
-		String message = "";
-
-		return new ModelAndView("searchkeyword", "message", message);
-	}
 	
 	@RequestMapping("/searchlocation")
 	public ModelAndView locationPage() {
