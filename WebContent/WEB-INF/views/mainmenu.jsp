@@ -8,9 +8,6 @@
 </head>
 <body>
 <h3>Main Menu</h3>
-<form action="searchkeyword.html">
-    <input type="submit" value="Search by Keyword" />
-</form>
 <form action="searchlocation.html">
     <input type="submit" value="Search by Location" />
 </form>
