@@ -8,5 +8,11 @@
 </head>
 <body>
 View Account!!!
+
+User Name:
+Name:
+City:
+Phone:
+
 </body>
 </html>
