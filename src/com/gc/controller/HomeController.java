@@ -33,4 +33,11 @@ public class HomeController {
 
 		return new ModelAndView("success", "message", message);
 	}
+	
+	@RequestMapping("/submitrequest")
+	public ModelAndView requestPage() {
+		String message = "";
+
+		return new ModelAndView("submitrequest", "message", message);
+	}
 }
