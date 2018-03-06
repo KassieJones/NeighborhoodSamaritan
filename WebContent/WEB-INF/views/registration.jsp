@@ -21,6 +21,22 @@
 		Phone Number: <input type="text" name="pNumber"><br>
 		<input type="submit" value="Sign-Up!">
 	</form>
+	
+	<form action="mainmenu" method="post">
+	<div class="container">
+	    <label for="uName"><b>User Name</b></label><br>
+		<input type="text" placeholder="Enter User Name" name="uName" required><br>
+		
+		<label for="eMail"><b>Email</b></label><br>
+		<input type="text" placeholder="Enter Email" name="eMail"><br>
+		
+		<label for="password"><b>Password</b></label><br>
+		<input type="text" placeholder="Enter Password" name="password" required><br><br>
+		
+		<input type="submit" value="Sign-In">
+		
+		</div>
+	</form>
 
 </body>
 </html>

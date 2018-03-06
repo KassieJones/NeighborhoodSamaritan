@@ -11,11 +11,19 @@
 <body>
 <h1>Welcome!</h1>
 	<form action="mainmenu" method="post">
-		User Name: <input type="text" name="uName" required><br>
-		Password: <input type="text" name="password" required><br>
+	<div class="container">
+	    <label for="uName"><b>User Name</b></label><br>
+		<input type="text" placeholder="Enter User Name" name="uName" required><br>
+		
+		<label for="password"><b>Password</b></label><br>
+		<input type="text" placeholder="Enter Password" name="password" required><br><br>
+		
 		<input type="submit" value="Sign-In">
+		
+		</div>
 	</form>
-	<a href="http://localhost:8080/NeighborhoodSamaritan/registration">Sign Up!</a>
+	
+	<h5>No account? <a href="http://localhost:8080/NeighborhoodSamaritan/registration">Sign Up!</a></h5>
 	
 ${message}
 </body>
