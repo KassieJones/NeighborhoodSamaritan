@@ -28,6 +28,12 @@ public class SearchController {
 		return new ModelAndView("results", "message", message);
 	}
 
+	@RequestMapping("/taskview")
+	public ModelAndView taskPage() {
+		String message = "";
+
+		return new ModelAndView("taskview", "message", message);
+	}
 }
 
 

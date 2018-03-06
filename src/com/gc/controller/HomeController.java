@@ -54,14 +54,7 @@ public class HomeController {
 
 		return new ModelAndView("submitrequest", "message", message);
 	}
-	
-	@RequestMapping("/taskview")
-	public ModelAndView taskPage() {
-		String message = "";
 
-		return new ModelAndView("taskview", "message", message);
-	}
-	
 	@RequestMapping("/taskaccepted")
 	public ModelAndView acceptedPage() {
 		String message = "";
