@@ -1,7 +1,10 @@
 package com.gc.controller;
 
+import javax.websocket.Session;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -33,6 +36,8 @@ public class HomeController {
 
 		return new ModelAndView("success", "message", message);
 	}
+	
+	
 	
 	@RequestMapping("/mainmenu")
 	public ModelAndView menuPage() {
