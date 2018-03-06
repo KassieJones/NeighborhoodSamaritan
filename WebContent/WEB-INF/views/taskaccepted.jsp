@@ -4,18 +4,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Tast View</title>
+<title>Thank You</title>
 </head>
 <body>
-<h3>Title</h3>
-<p>insert map</p>
 
-<p>Date</p>
-<p>Time</p>
-<p>Location</p>
-<p>Estimated Length of Task</p>
-<p>Required Skills</p>
+<h3>Thank you for helping your neighbor!</h3>
 
-<a href="taskaccepted.html" class="button">Volunteer</a>     <a href="success.html" class="button">Return</a>
+<p>insert contact option</p>
+
+<a href="success.html" class="button">Return</a>
+
 </body>
 </html>
