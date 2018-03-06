@@ -3,6 +3,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+<!-- Favicon -->
+<link rel="shortcut icon" href="https://files.slack.com/files-pri/T04UPFZ31-F9KERJV0T/finalprojecticon.png" />
+
 <title>Spring MVC</title>
 </head>
 <body>
@@ -14,9 +17,9 @@
 		<p>Neighborhood Samaritan is a connection hub for those wanting to
 			devote their time and skills to others within their community who
 			have needs to be filled.  The goal is to promote community altruism and engagement.</p>
-		<p>
+		<h3>
 		Please <a href="registration.html">register</a> or <a href="welcome.html">sign in</a> to access the community!
-		</p>
+		</h3>
 	</div>
 </body>
 </html>
