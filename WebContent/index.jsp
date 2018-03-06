@@ -15,6 +15,9 @@
 			devote their time and skills to others within their community who
 			have needs that need to be filled.  The goal is to promote community altruism and engagement.
 		</p> 
+		<p>
+		Please <a href="registration.html">register</a> or <a href="welcome.html">sign in</a> to access the community!
+		</p>
 	</div>
 </body>
 </html>
