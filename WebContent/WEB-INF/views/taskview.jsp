@@ -1,21 +1,26 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
+  <style>
+      #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Tast View</title>
+<title>Task View</title>
 </head>
 <body>
 	<h3>Title</h3>
-	<p>insert map</p>
 
 	<p>Date</p>
 	<p>Time</p>
 	<p>Location</p>
 	<p>Estimated Length of Task</p>
 	<p>Required Skills</p>
-	<div id="map"></div>
+	
 
 	<form action="taskaccepted.html">
 		<input type="submit" value="Volunteer" />
@@ -24,7 +29,9 @@
 	<form action="mainmenu.html">
 		<input type="submit" value="Return" />
 	</form>
-	<script>
+		<div id="map"></div>
+
+	    <script>
       function initMap() {
         var uluru = {lat: 42.335911, lng: -83.0497};
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -37,8 +44,8 @@
         });
       }
     </script>
-	<script async defer
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4K4nnt7VvrmV17Fmw6SGVGQKurHtVCqs&callback=initMap">
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key= AIzaSyC4K4nnt7VvrmV17Fmw6SGVGQKurHtVCqs&callback=initMap">
     </script>
 </body>
 </html>
