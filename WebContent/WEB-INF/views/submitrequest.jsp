@@ -4,14 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Success!</title>
+<title>Submit a New Request</title>
 </head>
 <body>
-<h3>Post a New Request</h3>
+<h3>Submit a New Request</h3>
 <br>
 <p>Please enter the information associated with your request.</p>
 <br>
-	<form action="insertnewpagenamehere" method="post">
+	<form action="taskview" method="post">
 		Title: <input type="text" name="taskTitle"><br>
 		Date: <input type="text" name="taskDate"><br>
 		Time: <input type="text" name="taskTime"><br>
