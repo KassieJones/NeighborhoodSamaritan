@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,14 +7,14 @@
 </head>
 <body>
 	<br>
-	<div style="text-align:center">
+	<div style="text-align: center">
 		<h2>
-			Hello World!<br> <br>
+			Neighborhood Samaritan!<br> <br>
 		</h2>
-		<h3>
-			<a href="welcome.html">Click here to see the welcome page</a>
-			(check HomeController.java to view info for @RequestMapping("/welcome"))
-		</h3>
+		<p>Neighborhood Samaritan is a connection hub for those wanting to
+			devote their time and skills to others within their community who
+			have needs that need to be filled.  The goal is to promote community altruism and engagement.
+		</p> 
 	</div>
 </body>
 </html>
