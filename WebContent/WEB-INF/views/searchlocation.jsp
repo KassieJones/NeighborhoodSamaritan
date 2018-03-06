@@ -9,7 +9,7 @@
 <body>
 <h3>Search by Location</h3>
 
-<form action="locationresults.html">
+<form action="results.html">
 Enter a location:<input type="text" name="city" />
 <input type="submit" value="Search" />
 </form>

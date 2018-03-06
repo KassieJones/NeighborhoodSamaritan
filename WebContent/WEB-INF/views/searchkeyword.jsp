@@ -9,7 +9,7 @@
 <body>
 <h3>Search by Keyword</h3>
 
-<form action="keywordresults.html">
+<form action="results.html">
 Enter a keyword:<input type="text" name="keyword" />
 <input type="submit" value="Search" />
 </form>
