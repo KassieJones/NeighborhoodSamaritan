@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 public class User {
 
-	private String userName;
+	private String username;
 	private String password;
 	private String firstName;
 	private String lastName;
@@ -21,9 +21,9 @@ public class User {
 		
 	}
 
-	public User(String userName, String password, String firstName, String lastName, String email, String phone) {
+	public User(String username, String password, String firstName, String lastName, String email, String phone) {
 		super();
-		this.userName = userName;
+		this.username = username;
 		this.password = password;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -33,15 +33,15 @@ public class User {
 
 	@Id // maps the primary key
 	@Column(name = "Username") // name is optional if your column names match your variable names
-	public String getUserName() {
-		return userName;
+	public String getUsername() {
+		return username;
 	}
 
 	public void setUserName(String userName) {
-		this.userName = userName;
+		this.username = username;
 	}
 
-	@Column
+	@Column(name = "Password")
 	public String getPassword() {
 		return password;
 	}
@@ -50,7 +50,7 @@ public class User {
 		this.password = password;
 	}
 
-	@Column
+	@Column(name = "FirstName")
 	public String getFirstName() {
 		return firstName;
 	}
@@ -59,7 +59,7 @@ public class User {
 		this.firstName = firstName;
 	}
 
-	@Column
+	@Column(name = "LastName")
 	public String getLastName() {
 		return lastName;
 	}
@@ -68,7 +68,7 @@ public class User {
 		this.lastName = lastName;
 	}
 
-	@Column
+	@Column(name = "Email")
 	public String getEmail() {
 		return email;
 	}
@@ -77,7 +77,7 @@ public class User {
 		this.email = email;
 	}
 
-	@Column
+	@Column(name = "Phone")
 	public String getPhone() {
 		return phone;
 	}
