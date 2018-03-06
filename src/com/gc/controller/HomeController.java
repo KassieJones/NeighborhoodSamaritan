@@ -6,7 +6,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 /**
  * 
- * @author James Drain Nikki Shah David Musko Kassie Jones
+ * @author James Drain, Nikki Shah, David Musko, Kassie Jones
  *
  */
 
@@ -41,28 +41,6 @@ public class HomeController {
 		return new ModelAndView("mainmenu", "message", message);
 	}
 	
-	@RequestMapping("/searchkeyword")
-	public ModelAndView keywordPage() {
-		String message = "";
-
-		return new ModelAndView("searchkeyword", "message", message);
-	}
-	
-	@RequestMapping("/results")
-	public ModelAndView keywordResultsPage() {
-		String message = "";
-
-		return new ModelAndView("results", "message", message);
-	}
-	
-	@RequestMapping("/searchlocation")
-	public ModelAndView locationPage() {
-		String message = "";
-
-		return new ModelAndView("searchlocation", "message", message);
-	}
-	
-	
 	@RequestMapping("/viewaccount")
 	public ModelAndView accountPage() {
 		String message = "";
@@ -76,14 +54,7 @@ public class HomeController {
 
 		return new ModelAndView("submitrequest", "message", message);
 	}
-	
-	@RequestMapping("/taskview")
-	public ModelAndView taskPage() {
-		String message = "";
 
-		return new ModelAndView("taskview", "message", message);
-	}
-	
 	@RequestMapping("/taskaccepted")
 	public ModelAndView acceptedPage() {
 		String message = "";
