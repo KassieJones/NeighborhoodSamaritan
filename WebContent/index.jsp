@@ -3,6 +3,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+<!-- Favicon -->
+<link rel="shortcut icon" href="https://files.slack.com/files-pri/T04UPFZ31-F9KERJV0T/finalprojecticon.png" />
+
 <title>Spring MVC</title>
 </head>
 <body>
