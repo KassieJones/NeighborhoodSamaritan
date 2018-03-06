@@ -48,11 +48,25 @@ public class HomeController {
 		return new ModelAndView("searchkeyword", "message", message);
 	}
 	
+	@RequestMapping("/keywordresults")
+	public ModelAndView keywordResultsPage() {
+		String message = "";
+
+		return new ModelAndView("keywordresults", "message", message);
+	}
+	
 	@RequestMapping("/searchlocation")
 	public ModelAndView locationPage() {
 		String message = "";
 
 		return new ModelAndView("searchlocation", "message", message);
+	}
+	
+	@RequestMapping("/locationresults")
+	public ModelAndView locationResultsPage() {
+		String message = "";
+
+		return new ModelAndView("locationresults", "message", message);
 	}
 	
 	@RequestMapping("/viewaccount")
