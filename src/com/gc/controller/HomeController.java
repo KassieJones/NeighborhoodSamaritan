@@ -6,7 +6,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 /**
  * 
- * @author James Drain  Nikki Shah  David Musko  Kassie Jones
+ * @author James Drain Nikki Shah David Musko Kassie Jones
  *
  */
 
@@ -19,16 +19,18 @@ public class HomeController {
 		String message = "";
 		return new ModelAndView("welcome", "message", message);
 	}
+
 	@RequestMapping("/registration")
 	public ModelAndView registrationPage() {
 		String message = "";
-		
-		return new ModelAndView("registration","message",message);
-		}
+
+		return new ModelAndView("registration", "message", message);
+	}
+
 	@RequestMapping("/success")
 	public ModelAndView successPage() {
 		String message = "";
-		
-		return new ModelAndView("success","message",message);
-		}
+
+		return new ModelAndView("success", "message", message);
+	}
 }
