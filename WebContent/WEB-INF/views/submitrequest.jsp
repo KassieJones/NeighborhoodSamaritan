@@ -14,12 +14,13 @@
 <p>Please enter the information associated with your request.</p>
 <br>
 	<form action="submitsuccess" method="post">
-		Title: <input type="text" name="taskTitle"><br>
-		Username: <input type="text" name="username"><br>
+		Title: <input type="text" name="title"><br>
+		Username: <input type="text" name="usernameHost"><br>
 		Date: <input type="text" name="date"><br>
 		Time: <input type="text" name="time"><br>
 		Estimated Job Length: <input type="text" name="estimatedTime"><br>
 		Required Skills: <input type="text" name="skillsNeeded"><br>
+		City: <input type="text" name="city"><br>
 		<input type="submit" value="Submit Request">
 	</form>
 </body>
