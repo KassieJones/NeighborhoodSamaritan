@@ -108,6 +108,7 @@ public class User {
 	public void setCity(String city) {
 		this.city = city;
 	}
+	
 	@Column(name = "Address")
 	public String getAddress() {
 		return address;

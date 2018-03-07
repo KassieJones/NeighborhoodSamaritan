@@ -6,15 +6,24 @@
 <!-- Favicon -->
 <link rel="shortcut icon" href="https://files.slack.com/files-pri/T04UPFZ31-F9KERJV0T/finalprojecticon.png" />
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Account View</title>
 </head>
 <body>
-View Account!!!
+<h3>Welcome to the Account View</h3>
+<br>
+<h4>Account Details</h4>
+<br>
+User Name: ${username} <br>
+Name: ${firstName} ${lastName} <br>
+City: ${city} <br>
+Phone: ${phone} <br>
 
-User Name:
-Name:
-City:
-Phone:
+<br>
+--INSERT HOURS BANK--
 
+<br>
+<br>
+
+--Insert DONATE option with PayPanda--
 </body>
 </html>
