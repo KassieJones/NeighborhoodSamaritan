@@ -24,6 +24,7 @@ import com.gc.util.HibernateUtil;
  */
 
 @Controller
+//
 public class HomeController {
 
 	@RequestMapping("/welcome")
