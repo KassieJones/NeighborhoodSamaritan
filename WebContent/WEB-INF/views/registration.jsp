@@ -10,18 +10,7 @@
 </head>
 <body>
 <h1>Register!</h1>
-	<form action="mainmenu" method="post">
-		User Name: <input type="text" name="uName"><br>
-		E-mail: <input type="text" name="eMail"><br>
-		Password: <input type="password" name="password"><br>
-		Confirm Password: <input type="password" name="password"><br>
-		First Name: <input type="text" name="fName"><br>
-		Last Name: <input type="text" name="lName"><br>
-		City: <input type="text" name="city"><br>
-		Phone Number: <input type="text" name="pNumber"><br>
-		<input type="submit" value="Sign-Up!">
-	</form>
-	
+
 	<form action="mainmenu" method="post">
 	<div class="container">
 	    <label for="uName"><b>User Name</b></label><br>
@@ -31,7 +20,22 @@
 		<input type="text" placeholder="Enter Email" name="eMail"><br>
 		
 		<label for="password"><b>Password</b></label><br>
-		<input type="text" placeholder="Enter Password" name="password" required><br><br>
+		<input type="text" placeholder="Enter Password" name="password" required><br>
+		
+		<label for="password"><b>Confirm Password</b></label><br>
+		<input type="text" placeholder="Confirm Password" name="password" required><br>
+		
+		<label for="fName"><b>First Name</b></label><br>
+		<input type="text" placeholder="Enter First Name" name="fName" required><br>
+		
+		<label for="lName"><b>Last Name</b></label><br>
+		<input type="text" placeholder="Enter Last Name" name="lName" required><br>
+		
+		<label for="city"><b>City</b></label><br>
+		<input type="text" placeholder="Enter City" name="city" required><br>
+		
+		 <label for="pNumber"><b>Phone Number</b></label><br>
+		<input type="text" placeholder="Enter Phone Number" name="pNumber" required><br><br>
 		
 		<input type="submit" value="Sign-In">
 		
