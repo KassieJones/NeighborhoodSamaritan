@@ -75,7 +75,7 @@ public class HomeController {
 	public ModelAndView menuPage() {
 		String message = "";
 
-		return new ModelAndView("mainmenu", "message", message);
+		return new ModelAndView("registrationsuccess", "message", message);
 	}
 
 	@RequestMapping("/viewaccount")

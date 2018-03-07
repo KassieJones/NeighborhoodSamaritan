@@ -12,7 +12,7 @@
 <h1>Register!</h1>		
 
 
-	<form action="mainmenu" method="post">
+	<form action="registrationsuccess" method="post">
 	<div class="container">
 	    <label for="uName"><b>User Name</b></label><br>
 		<input type="text" placeholder="Enter User Name" name="username" required><br>
@@ -21,10 +21,10 @@
 		<input type="text" placeholder="Enter Email" name="email"><br>
 		
 		<label for="password"><b>Password</b></label><br>
-		<input type="text" placeholder="Enter Password" name="password" required><br>
+		<input type="password" placeholder="Enter Password" name="password" required><br>
 		
 		<label for="password"><b>Confirm Password</b></label><br>
-		<input type="text" placeholder="Confirm Password" name="password" required><br>
+		<input type="password" placeholder="Confirm Password" name="password" required><br>
 		
 		<label for="fName"><b>First Name</b></label><br>
 		<input type="text" placeholder="Enter First Name" name="firstName" required><br>
