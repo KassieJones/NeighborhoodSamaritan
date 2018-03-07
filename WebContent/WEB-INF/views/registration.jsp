@@ -35,6 +35,9 @@
 		<label for="lName"><b>Last Name</b></label><br>
 		<input type="text" placeholder="Enter Last Name" name="lastName" required><br>
 		
+		<label for="address"><b>Address</b></label><br>
+		<input type="text" placeholder="Enter Address" name="address" required><br>
+		
 		<label for="city"><b>City</b></label><br>
 		<input type="text" placeholder="Enter City" name="city" required><br>
 		
