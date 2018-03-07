@@ -12,9 +12,9 @@
 	<br>
 	<div style="text-align: center">
 		<h1>
-			Neighborhood Samaritan!<br> <br>
+			Hood Samaritan!<br> <br>
 		</h1>
-		<h4>Neighborhood Samaritan is a connection hub for those wanting to
+		<h4>Hood Samaritan is a connection hub for those wanting to
 			devote their time and skills to others within their community who
 			have needs to be filled.  The goal is to promote community altruism and engagement.</h4>
 		<h3>
