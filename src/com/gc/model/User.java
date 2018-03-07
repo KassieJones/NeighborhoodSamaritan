@@ -17,7 +17,9 @@ public class User {
 	private String email;
 	private String phone;
 	private String city;
+	private String address;
 	
+
 	public User() {
 		
 	}
@@ -106,7 +108,14 @@ public class User {
 	public void setCity(String city) {
 		this.city = city;
 	}
+	@Column(name = "Address")
+	public String getAddress() {
+		return address;
+	}
 	
+	public void setAddress(String address) {
+		this.address = address;
+	}
 	
 
 }
