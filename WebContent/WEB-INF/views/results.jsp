@@ -9,6 +9,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-Show keyword search results
+<h3>Show location search results (tasks available) by city</h3>
+
+
+
 </body>
 </html>
