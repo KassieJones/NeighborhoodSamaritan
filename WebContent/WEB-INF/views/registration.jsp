@@ -9,7 +9,7 @@
 <title>Registration</title>
 </head>
 <body>
-<h1>Register!</h1>
+<h1>Register!</h1>		
 
 	<form action="mainmenu" method="post">
 	<div class="container">
