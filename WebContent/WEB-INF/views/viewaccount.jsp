@@ -6,15 +6,16 @@
 <!-- Favicon -->
 <link rel="shortcut icon" href="https://files.slack.com/files-pri/T04UPFZ31-F9KERJV0T/finalprojecticon.png" />
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Account View</title>
 </head>
 <body>
-View Account!!!
+<h3>Welcome to View Account</h3>
+<br>
 
-User Name:
-Name:
-City:
-Phone:
+User Name: ${username}
+Name: ${firstName} ${lastName}
+City: ${city}
+Phone: ${phone}
 
 </body>
 </html>
