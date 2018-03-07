@@ -47,7 +47,7 @@ public class HomeController {
 		return new ModelAndView("success", "message", message);
 	}
 
-	@RequestMapping("registration")
+	@RequestMapping("registrationsuccess")
 	public ModelAndView addNewUser(@RequestParam("username") String username, @RequestParam("password") String password,
 			@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName,
 			@RequestParam("email") String email, @RequestParam("phone") String phone) {
