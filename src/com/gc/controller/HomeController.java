@@ -57,7 +57,7 @@ public class HomeController {
 														// implemention of of our code
 
 		User newUser = new User();
-		newUser.setUserName(username);
+		newUser.setUsername(username);
 		newUser.setPassword(password);
 		newUser.setFirstName(firstName);
 		newUser.setLastName(lastName);

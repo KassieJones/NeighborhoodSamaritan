@@ -10,15 +10,15 @@
 </head>
 <body>
 <h1>Register!</h1>
-	<form action="mainmenu" method="post">
-		User Name: <input type="text" name="uName"><br>
-		E-mail: <input type="text" name="eMail"><br>
+	<form action="registrationsuccess" method="post">
+		User Name: <input type="text" name="username"><br>
+		E-mail: <input type="text" name="email"><br>
 		Password: <input type="password" name="password"><br>
 		Confirm Password: <input type="password" name="password"><br>
-		First Name: <input type="text" name="fName"><br>
-		Last Name: <input type="text" name="lName"><br>
+		First Name: <input type="text" name="firstName"><br>
+		Last Name: <input type="text" name="lastName"><br>
 		City: <input type="text" name="city"><br>
-		Phone Number: <input type="text" name="pNumber"><br>
+		Phone Number: <input type="text" name="phone"><br>
 		<input type="submit" value="Sign-Up!">
 	</form>
 

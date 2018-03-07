@@ -9,20 +9,21 @@ import javax.persistence.Table;
 @Table(name = "user") // maps the class to the DB table specified by the name modifier
 
 public class User {
-
+	private int id;
 	private String username;
 	private String password;
 	private String firstName;
 	private String lastName;
 	private String email;
 	private String phone;
-	
+
 	public User() {
 		
 	}
 
 	public User(String username, String password, String firstName, String lastName, String email, String phone) {
 		super();
+		
 		this.username = username;
 		this.password = password;
 		this.firstName = firstName;
@@ -30,14 +31,23 @@ public class User {
 		this.email = email;
 		this.phone = phone;
 	}
+	@Id
+	@Column(name = "id")
+	public int getId() {
+		return id;
+	}
 
-	@Id // maps the primary key
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
 	@Column(name = "Username") // name is optional if your column names match your variable names
 	public String getUsername() {
 		return username;
 	}
 
-	public void setUserName(String userName) {
+	public void setUsername(String username) {
 		this.username = username;
 	}
 
@@ -45,6 +55,7 @@ public class User {
 	public String getPassword() {
 		return password;
 	}
+
 
 	public void setPassword(String password) {
 		this.password = password;
