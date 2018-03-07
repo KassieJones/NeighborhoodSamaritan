@@ -12,10 +12,17 @@
 <h3>Welcome to View Account</h3>
 <br>
 
-User Name: ${username}
-Name: ${firstName} ${lastName}
-City: ${city}
-Phone: ${phone}
+User Name: ${username} <br>
+Name: ${firstName} ${lastName} <br>
+City: ${city} <br>
+Phone: ${phone} <br>
 
+<br>
+--INSERT HOURS BANK--
+
+<br>
+<br>
+
+--Insert DONATE option with PayPanda--
 </body>
 </html>
