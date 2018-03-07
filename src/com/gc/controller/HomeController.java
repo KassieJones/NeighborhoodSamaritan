@@ -69,6 +69,7 @@ public class HomeController {
 		session.close();
 
 		return new ModelAndView("mainmenu", "product", newUser);
+
 	}
 
 	@RequestMapping("/mainmenu")
