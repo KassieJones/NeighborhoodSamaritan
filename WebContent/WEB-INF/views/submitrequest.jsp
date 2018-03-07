@@ -15,10 +15,11 @@
 <br>
 	<form action="taskview" method="post">
 		Title: <input type="text" name="taskTitle"><br>
-		Date: <input type="text" name="taskDate"><br>
-		Time: <input type="text" name="taskTime"><br>
-		Estimated Job Length: <input type="text" name="taskLength"><br>
-		Required Skills: <input type="text" name="taskSkills"><br>
+		Username: <input type="text" name="username"><br>
+		Date: <input type="text" name="date"><br>
+		Time: <input type="text" name="time"><br>
+		Estimated Job Length: <input type="text" name="estimatedTime"><br>
+		Required Skills: <input type="text" name="skillsNeeded"><br>
 		<input type="submit" value="Submit Request">
 	</form>
 </body>

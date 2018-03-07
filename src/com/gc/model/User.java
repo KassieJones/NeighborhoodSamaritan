@@ -31,6 +31,7 @@ public class User {
 		this.lastName = lastName;
 		this.email = email;
 		this.phone = phone;	}
+	
 	@Id
 	@Column(name = "id")
 	public int getId() {
