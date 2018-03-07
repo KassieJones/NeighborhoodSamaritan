@@ -9,9 +9,10 @@
 <title>Account View</title>
 </head>
 <body>
-<h3>Welcome to View Account</h3>
+<h3>Welcome to the Account View</h3>
 <br>
-
+<h4>Account Details</h4>
+<br>
 User Name: ${username} <br>
 Name: ${firstName} ${lastName} <br>
 City: ${city} <br>
