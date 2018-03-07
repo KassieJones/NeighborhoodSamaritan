@@ -47,7 +47,7 @@ public class HomeController {
 		return new ModelAndView("success", "message", message);
 	}
 
-	@RequestMapping("registrationsuccess")
+	@RequestMapping("registration")
 	public ModelAndView addNewUser(@RequestParam("username") String username, @RequestParam("password") String password,
 			@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName,
 			@RequestParam("email") String email, @RequestParam("phone") String phone) {
@@ -68,7 +68,7 @@ public class HomeController {
 		tx.commit();
 		session.close();
 
-		return new ModelAndView("registrationsuccess", "product", newUser);
+		return new ModelAndView("registration", "product", newUser);
 	}
 
 	@RequestMapping("/mainmenu")
