@@ -9,6 +9,7 @@ import javax.persistence.Table;
 @Table(name = "task") // maps the class to the DB table specified by the name modifier
 
 public class Task {
+	private int id;
 	private int taskId;
 	private String usernameHost;
 	private String date;
@@ -25,7 +26,7 @@ public class Task {
 	public Task(int taskId, String usernameHost, String date, String time, int estimatedTime,
 			String skillsNeeded, String city, String title) {
 		super();
-		this.taskId = taskId;
+		//this.taskId = taskId;
 		this.usernameHost = usernameHost;
 		this.date = date;
 		this.time = time;
@@ -36,6 +37,15 @@ public class Task {
 	}
 	
 	@Id
+	@Column(name = "id")
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
 	@Column (name = "TaskID")
 	public int getTaskId() {
 		return taskId;

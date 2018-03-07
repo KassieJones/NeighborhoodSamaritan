@@ -42,8 +42,7 @@ public class SearchController {
 	}
 
 	@RequestMapping("submitsuccess")
-	public ModelAndView addNewTask(@RequestParam("taskID") int taskID,
-			@RequestParam("usernameHost") String usernameHost, @RequestParam("date") String date,
+	public ModelAndView addNewTask(@RequestParam("usernameHost") String usernameHost, @RequestParam("date") String date,
 			@RequestParam("time") String time, @RequestParam("estimatedTime") int estimatedTime,
 			@RequestParam("skillsNeeded") String skillsNeeded, @RequestParam("city") String city, @RequestParam("title") String title) {
 		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
@@ -52,7 +51,6 @@ public class SearchController {
 														// implemention of of our code
 
 		Task newTask = new Task();
-		newTask.setTaskId(taskID);
 		newTask.setUsernameHost(usernameHost);
 		newTask.setDate(date);
 		newTask.setTime(time);
