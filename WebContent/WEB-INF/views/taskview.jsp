@@ -41,7 +41,7 @@
           center: uluru
         });
         var marker = new google.maps.Marker({
-          position: uluru,
+          position: {lat: 42.5752311, lng: -83.1244802},
           map: map
         });
       }
@@ -49,5 +49,6 @@
     <script async defer
       src="https://maps.googleapis.com/maps/api/js?key= AIzaSyC4K4nnt7VvrmV17Fmw6SGVGQKurHtVCqs&callback=initMap">
     </script>
+   <!-- https://maps.googleapis.com/maps/api/geocode/json?address=####+street,+city,+mi&key=AIzaSyC4K4nnt7VvrmV17Fmw6SGVGQKurHtVCqs -->
 </body>
 </html>
