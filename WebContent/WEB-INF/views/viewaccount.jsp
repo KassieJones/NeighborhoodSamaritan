@@ -25,5 +25,10 @@ Phone: ${phone} <br>
 <br>
 
 --Insert DONATE option with PayPanda--
+<br>
+<br>
+<form action="mainmenu.html">
+    <input type="submit" value="Return" />
+</form>
 </body>
 </html>
