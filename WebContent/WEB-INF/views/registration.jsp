@@ -38,7 +38,7 @@
 		 <label for="pNumber"><b>Phone Number</b></label><br>
 		<input type="text" placeholder="Enter Phone Number" name="phone" required><br><br>
 		
-		<input type="submit" value="Sign-In">
+		<input type="submit" value="Register">
 		
 		</div>
 

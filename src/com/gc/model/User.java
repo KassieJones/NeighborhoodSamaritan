@@ -16,12 +16,13 @@ public class User {
 	private String lastName;
 	private String email;
 	private String phone;
-
+	private String city;
+	
 	public User() {
 		
 	}
 
-	public User(String username, String password, String firstName, String lastName, String email, String phone) {
+	public User(String username, String password, String firstName, String lastName, String email, String phone, String city) {
 		super();
 		
 		this.username = username;
@@ -29,8 +30,7 @@ public class User {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
-		this.phone = phone;
-	}
+		this.phone = phone;	}
 	@Id
 	@Column(name = "id")
 	public int getId() {
@@ -97,7 +97,14 @@ public class User {
 		this.phone = phone;
 	}
 	
-	
+	@Column(name = "City")
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
 	
 	
 
