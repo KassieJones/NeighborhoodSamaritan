@@ -23,3 +23,5 @@ bin/
 hibernate.cfg.xml
 
 APICredentials.java
+
+pom.xml
