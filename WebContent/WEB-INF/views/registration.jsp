@@ -9,11 +9,14 @@
 <title>Registration</title>
 </head>
 <body>
+<div style="text-align: center">
 <h1>Register!</h1>		
+</div>
 
 
 	<form action="registrationsuccess" method="post">
 	<div class="container">
+
 	    <label for="uName"><b>User Name</b></label><br>
 		<input type="text" placeholder="Enter User Name" name="username" required><br>
 		
