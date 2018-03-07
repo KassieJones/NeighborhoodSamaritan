@@ -41,7 +41,7 @@ public class SearchController {
 		return new ModelAndView("taskview", "message", message);
 	}
 
-	@RequestMapping("searchsuccess")
+	@RequestMapping("submitsuccess")
 	public ModelAndView addNewTask(@RequestParam("taskID") int taskID,
 			@RequestParam("usernameHost") String usernameHost, @RequestParam("date") String date,
 			@RequestParam("time") String time, @RequestParam("estimatedTime") int estimatedTime,
@@ -66,7 +66,7 @@ public class SearchController {
 		tx.commit();
 		session.close();
 
-		return new ModelAndView("results", "product", newTask);
+		return new ModelAndView("mainmenu", "product", newTask);
 
 	}
 

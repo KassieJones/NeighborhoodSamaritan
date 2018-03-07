@@ -13,7 +13,7 @@
 <br>
 <p>Please enter the information associated with your request.</p>
 <br>
-	<form action="taskview" method="post">
+	<form action="submitsuccess" method="post">
 		Title: <input type="text" name="taskTitle"><br>
 		Username: <input type="text" name="username"><br>
 		Date: <input type="text" name="date"><br>
