@@ -68,14 +68,14 @@ public class HomeController {
 		tx.commit();
 		session.close();
 
-		return new ModelAndView("registrationsuccess", "product", newUser);
+		return new ModelAndView("mainmenu", "product", newUser);
 	}
 
 	@RequestMapping("/mainmenu")
 	public ModelAndView menuPage() {
 		String message = "";
 
-		return new ModelAndView("registrationsuccess", "message", message);
+		return new ModelAndView("mainmenu", "message", message);
 	}
 
 	@RequestMapping("/viewaccount")
