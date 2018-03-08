@@ -107,6 +107,7 @@ p {
 					<th>Time (Military Time)</th>
 					<th>Task Length (Hrs)</th>
 					<th>City</th>
+					<th>  </th>
 				</tr>
 
 				<c:forEach var="myVar" items="${taskList}">
@@ -118,6 +119,7 @@ p {
 						<td>${myVar.time}</td>
 						<td>${myVar.estimatedTime}</td>
 						<td>${myVar.city}</td>
+						<td><a href="taskaccepted">Volunteer</a></td>
 					</tr>
 				</c:forEach>
 			</table>
