@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -74,7 +74,8 @@ p {
 }
 
 #content {
-	text-align: center; width : 100%;
+	text-align: center;
+	width: 100%;
 	background-color: #EDAE49;
 	overflow-x: hidden;
 	clear: both;
@@ -95,24 +96,39 @@ p {
 
 		<div id="content">
 			<br> <br> <br> <br> <br>
-<h3>Task Opportunity Results</h3>
-<br>
+			<h3>Task Opportunity Results</h3>
+			<br>
 
-<table border="1" align="center">
-<c:forEach var="myVar" items="${taskList}">
-<tr>
-<td>${myVar.title}</td>
-<td>${myVar.date}</td>
-<td>${myVar.time}</td>
-<td>${myVar.estimatedTime}</td>
-<td>${myVar.city}</td>
-</tr>
-</c:forEach>
-</table>
+			<table border="1" align="center">
+				<tr>
+					<th>Title</th>
+					<th>Date</th>
+					<th>Time (Military Time)</th>
+					<th>Task Length (Hrs)</th>
+					<th>City</th>
+				</tr>
 
-<br><br>
-</div>
-</div>
+				<c:forEach var="myVar" items="${taskList}">
+
+					<tr>
+						<td>${myVar.title}</td>
+						<td>${myVar.date}</td>
+						<td>${myVar.time}</td>
+						<td>${myVar.estimatedTime}</td>
+						<td>${myVar.city}</td>
+					</tr>
+				</c:forEach>
+			</table>
+
+			<br> <br>
+			<form action="mainmenu.html">
+				<input type="submit" value="Return" />
+			</form>
+			<br>
+			<br>
+		</div>
+
+	</div>
 
 </body>
 </html>

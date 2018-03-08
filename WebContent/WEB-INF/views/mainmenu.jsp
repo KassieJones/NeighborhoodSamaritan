@@ -95,6 +95,9 @@ p {
 		<div id="content">
 			<br> <br> <br> <br> <br>
 <h3>Main Menu</h3>
+<form action="showallopps.html">
+    <input type="submit" value="See all Opportunities" />
+</form>
 <form action="searchlocation.html">
     <input type="submit" value="Search for Opportunities" />
 </form>
