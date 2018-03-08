@@ -5,13 +5,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>User Info</title>
 </head>
 <body>
+<h1>User Info</h1>
 <div>
 User Name: ${user.username}<br>
-
-
+Name: ${user.firstName}${user.lastName}<br>
+Email: ${user.email}<br>
+Phone Number: ${user.phone}<br>
+Address: ${user.address} ${user.city}, MI<br>
 
 </div>
 
