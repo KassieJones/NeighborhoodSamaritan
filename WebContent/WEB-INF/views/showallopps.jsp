@@ -101,6 +101,7 @@ p {
 
 			<table border="1" align="center">
 				<tr>
+					<th>Host</th>
 					<th>Title</th>
 					<th>Date</th>
 					<th>Time (Military Time)</th>
@@ -111,6 +112,7 @@ p {
 				<c:forEach var="myVar" items="${taskList}">
 
 					<tr>
+						<td>${myVar.usernameHost}</td>
 						<td>${myVar.title}</td>
 						<td>${myVar.date}</td>
 						<td>${myVar.time}</td>
