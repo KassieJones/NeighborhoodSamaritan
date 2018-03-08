@@ -27,12 +27,12 @@ public class SearchController {
 		return new ModelAndView("searchlocation", "message", message);
 	}
 
-	@RequestMapping("/results")
-	public ModelAndView keywordResultsPage() {
-		String message = "";
-
-		return new ModelAndView("results", "message", message);
-	}
+//	@RequestMapping("/results")
+//	public ModelAndView keywordResultsPage() {
+//		String message = "";
+//
+//		return new ModelAndView("results", "message", message);
+//	}
 
 	@RequestMapping("/taskview")
 	public ModelAndView taskPage() {

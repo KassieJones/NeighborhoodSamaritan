@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -97,7 +98,17 @@ p {
 <h3>Task Opportunity Results</h3>
 <br>
 
-show results
+<table border="1" align="center">
+<c:forEach var="myVar" items="${taskList}">
+<tr>
+<td>${myVar.title}</td>
+<td>${myVar.date}</td>
+<td>${myVar.time}</td>
+<td>${myVar.estimatedTime}</td>
+<td>${myVar.city}</td>
+</tr>
+</c:forEach>
+</table>
 
 <br><br>
 </div>
