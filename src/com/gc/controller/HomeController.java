@@ -102,4 +102,10 @@ public class HomeController {
 
 		return new ModelAndView("taskaccepted", "message", message);
 	}
+	@RequestMapping("/payment")
+	public ModelAndView paymentPage() {
+		String message = "";
+
+		return new ModelAndView("payment", "message", message);
+	}
 }
