@@ -96,13 +96,13 @@ p {
 			<br> <br> <br> <br> <br>
 <h3>Main Menu</h3>
 <form action="searchlocation.html">
-    <input type="submit" value="Search by Location" />
+    <input type="submit" value="Search for Opportunities" />
 </form>
 <form action="submitrequest.html">
     <input type="submit" value="Submit a New Task Request" />
 </form>
 <form action="viewaccount.html">
-    <input type="submit" value="View Account" />
+    <input type="submit" value="Donate Here" />
 </form>
 <br><br>
 </div>

@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>View Account</title>
+<title>Donation Options</title>
 
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link rel="stylesheet"
@@ -95,27 +95,20 @@ p {
 
 		<div id="content">
 			<br> <br> <br> <br> <br>
-<h3>Welcome to the Account View</h3>
+<h3>Donation Options</h3>
 <br>
-<h4>Account Details</h4>
+<h4>Thank you for engaging with your community through Hood Samaritan</h4>
 <br>
-User Name: ${username} <br>
-Name: ${firstName} ${lastName} <br>
-City: ${city} <br>
-Phone: ${phone} <br>
 
-<br>
---INSERT HOURS BANK--
+If you don't see your preferred organization in the below list, please <a href="http://panda-search.s3-website-us-east-1.amazonaws.com/">click here</a> to locate it.
 
 <br>
 <br>
-
 --Insert DONATE option with PayPanda--
 <br>
-Popular Charities and EIN numbers
 <br>
+<h3>Popular Charities and EIN numbers</h3>
 <br>
-
 <table border="1" align="center">
 <c:forEach var="myVar" items="${charList}">
 <tr>
