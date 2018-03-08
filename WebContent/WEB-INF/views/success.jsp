@@ -95,6 +95,7 @@ p {
 		<div id="content">
 			<br> <br> <br> <br> <br>
 Welcome Back!
+${specificItem}
 <br><br>
 </div>
 </div>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -110,6 +111,19 @@ Phone: ${phone} <br>
 <br>
 
 --Insert DONATE option with PayPanda--
+<br>
+Popular Charities and EIN numbers
+<br>
+<br>
+<table border="1" style = "table-align: center">
+<c:forEach var="myVar" items="${charList}">
+<tr>
+<td>${myVar.name}</td>
+<td>${myVar.ein}</td>
+</tr>
+</c:forEach>
+</table>
+
 <br>
 <br>
 <form action="mainmenu.html">
