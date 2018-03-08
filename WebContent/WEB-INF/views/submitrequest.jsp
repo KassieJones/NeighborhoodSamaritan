@@ -20,6 +20,7 @@
 		Time: <input type="text" name="time"><br>
 		Estimated Job Length: <input type="text" name="estimatedTime"><br>
 		Required Skills: <input type="text" name="skillsNeeded"><br>
+		Address: <input type="text" name="address"><br>
 		City: <input type="text" name="city"><br>
 		<input type="submit" value="Submit Request">
 	</form>
