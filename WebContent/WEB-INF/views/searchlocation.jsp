@@ -96,7 +96,7 @@ p {
 			<br> <br> <br> <br> <br>
 <h3>Search by Location</h3>
 
-<form action="results.html">
+<form action="results">
 Enter a city:<input type="text" name="city" />
 <input type="submit" value="Search" />
 </form>
