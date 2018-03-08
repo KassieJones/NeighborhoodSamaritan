@@ -1,5 +1,9 @@
 package com.gc.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -37,8 +41,15 @@ public class SearchController {
 	@RequestMapping("/taskview")
 	public ModelAndView taskPage() {
 		String message = "";
+		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+		Session session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction(); 
+		Query query = session.createQuery("from Task");
+		List taskList = query.list();
+		tx.commit();
+		session.close();
 
-		return new ModelAndView("taskview", "message", message);
+		return new ModelAndView("taskview", "taskList", taskList);
 	}
 
 	@RequestMapping("submitsuccess")
