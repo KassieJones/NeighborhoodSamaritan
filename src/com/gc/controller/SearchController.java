@@ -44,7 +44,7 @@ public class SearchController {
 	@RequestMapping("submitsuccess")
 	public ModelAndView addNewTask(@RequestParam("usernameHost") String usernameHost, @RequestParam("date") String date,
 			@RequestParam("time") String time, @RequestParam("estimatedTime") int estimatedTime,
-			@RequestParam("skillsNeeded") String skillsNeeded, @RequestParam("city") String city, @RequestParam("title") String title) {
+			@RequestParam("skillsNeeded") String skillsNeeded, @RequestParam("city") String city, @RequestParam("title") String title, @RequestParam("address") String address) {
 		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction(); // the transaction represents the unit of work or the actual
@@ -58,6 +58,7 @@ public class SearchController {
 		newTask.setSkillsNeeded(skillsNeeded);
 		newTask.setCity(city);
 		newTask.setTitle(title);
+		newTask.setAddress(address);
 
 
 		session.save(newTask);
