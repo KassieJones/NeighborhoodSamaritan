@@ -18,6 +18,7 @@ public class Task {
 	private String skillsNeeded;
 	private String city;
 	private String title;
+	private String address;
 	
 	public Task() {
 		super();
@@ -101,6 +102,14 @@ public class Task {
 	}
 	public void setTitle(String title) {
 		this.title = title;
+	}
+	
+	@Column (name = "Address")
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 
