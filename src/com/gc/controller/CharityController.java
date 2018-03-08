@@ -26,7 +26,7 @@ import com.gc.util.HibernateUtil;
 @Controller
 public class CharityController {
 	
-	@RequestMapping("/success2")
+	@RequestMapping("/viewaccount")
 	// this is listing all the data from the product class
 	public ModelAndView helloWorld(Model model) {
 

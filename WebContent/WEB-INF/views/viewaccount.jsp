@@ -115,7 +115,8 @@ Phone: ${phone} <br>
 Popular Charities and EIN numbers
 <br>
 <br>
-<table border="1" style = "table-align: center">
+
+<table border="1" align="center">
 <c:forEach var="myVar" items="${charList}">
 <tr>
 <td>${myVar.name}</td>
