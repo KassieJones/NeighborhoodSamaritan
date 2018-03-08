@@ -7,15 +7,15 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.gc.model.Task;
 import com.gc.util.HibernateUtil;
+
+
 
 /**
  * 
@@ -29,7 +29,7 @@ public class TaskController {
 	@RequestMapping("/showallopps")
 	// this is listing all the data from the product class
 	public ModelAndView helloWorld(Model model) {
-
+System.out.println("showallopps");
 		// Configuration config = new Configuration().configure("hibernate.cfg.xml");
 		// ServiceRegistry serviceRegistry = new
 		// ServiceRegistryBuilder().applySettings(config.getProperties())
