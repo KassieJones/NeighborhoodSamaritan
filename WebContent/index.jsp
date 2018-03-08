@@ -101,7 +101,7 @@ p {
 
 			<p>Have you ever needed some help around the house or with a
 				project, but didn't have the resources to hire a professional
-				company? Have you ever saw needs in your neighborhood that you just
+				company? Have you ever seen needs in your neighborhood that you just
 				knew you had the skills to fill but didn't know how to start? Hood
 				Samaritan is looking to bridge that gap between the community and
 				the individual. There is no catch, no fine print, and no gimmicks.

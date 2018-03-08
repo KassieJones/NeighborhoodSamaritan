@@ -82,12 +82,12 @@ public class HomeController {
 		return new ModelAndView("mainmenu", "message", message);
 	}
 
-	@RequestMapping("/viewaccount")
-	public ModelAndView accountPage() {
-		String message = "";
-
-		return new ModelAndView("viewaccount", "message", message);
-	}
+//	@RequestMapping("/viewaccount")
+//	public ModelAndView accountPage() {
+//		String message = "";
+//
+//		return new ModelAndView("viewaccount", "message", message);
+//	}
 
 	@RequestMapping("/submitrequest")
 	public ModelAndView requestPage() {
