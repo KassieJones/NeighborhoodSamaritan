@@ -136,7 +136,7 @@ p {
 
 <script>
 function myFunction() {
-    alert("Please contact your host to arrange the details of your task opportunity at ");
+    alert("Please contact your host to at their given number to arrange the details of your volunteer opportunity.");
 }
 </script>
 </body>

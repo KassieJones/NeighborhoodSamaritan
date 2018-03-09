@@ -137,7 +137,9 @@ p {
 
 <script>
 function myFunction() {
-    alert("Please contact your host to arrange the details of your task opportunity at ");
+	//need to add a phone number contact info to register page, map/link to here.  Don't show above
+
+    alert("Please contact your host to at their given number to arrange the details of your volunteer opportunity");
 }
 </script>
 </body>

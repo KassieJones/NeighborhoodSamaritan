@@ -107,6 +107,7 @@ p {
 		Required Skills:<br> <input type="text" name="skillsNeeded"><br>
 		Address:<br> <input type="text" name="address"><br>
 		City:<br> <input type="text" name="city"><br>
+		Phone:<br> <input type="text" name="phone"><br>
 		<input type="submit" value="Submit Request">
 	</form>
 	<br><br>
