@@ -107,6 +107,7 @@ p {
 					<th>Time (Military Time)</th>
 					<th>Task Length (Hrs)</th>
 					<th>City</th>
+					<th>Phone</th>
 					<th>  </th>
 				</tr>
 
@@ -119,6 +120,7 @@ p {
 						<td>${myVar.time}</td>
 						<td>${myVar.estimatedTime}</td>
 						<td>${myVar.city}</td>
+						<td>${myVar.phone}</td>
 						<td><button onclick="myFunction()">Volunteer</button></td>
 					</tr>
 				</c:forEach>
