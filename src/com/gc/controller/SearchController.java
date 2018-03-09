@@ -1,9 +1,15 @@
 package com.gc.controller;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
+import org.hibernate.Criteria;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -19,7 +25,7 @@ import com.gc.util.HibernateUtil;
 
 @Controller
 public class SearchController {
-
+	
 	@RequestMapping("/searchlocation")
 	public ModelAndView locationPage() {
 		String message = "";
@@ -28,10 +34,60 @@ public class SearchController {
 	}
 
 	@RequestMapping("/results")
-	public ModelAndView keywordResultsPage() {
-		String message = "";
+	// this is listing all the data from the product class
+	public ModelAndView helloWorld(@RequestParam ("city") String city) {
 
-		return new ModelAndView("results", "message", message);
+		ArrayList<Task> taskList = listAllTasks();
+		ArrayList<Task> localList = new ArrayList<Task>();
+
+		//localList.addAll(taskList);
+		
+
+		for (int i = 0; i < taskList.size(); i++) {
+			
+			if (taskList.get(i).getCity().equalsIgnoreCase(city)) {
+				
+				localList.add(taskList.get(i));
+				
+			}
+				
+				
+				
+				
+				
+				
+				
+
+//			if (localList.get(i).getCity().equalsIgnoreCase(city)) {
+//				
+//				localList.add(k);
+//				
+//			}
+
+		}
+
+		// Iterator itr = localList.iterator();
+		// while (itr.hasNext()) {
+		// System.out.println(itr.next());
+		// }
+
+		return new ModelAndView("results", "localList", localList);
+	}
+
+	private ArrayList<Task> listAllTasks() throws HibernateException {
+		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+
+		Session session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction(); // the transaction represents the unit of work or the actual
+														// implemention of of our code
+		Criteria crit = session.createCriteria(Task.class);
+		ArrayList<Task> taskList = (ArrayList<Task>) crit.list();
+		System.out.println(taskList.size());
+
+		// model.addAttribute("specificItem", charList.get(2).getName());
+		tx.commit();
+		session.close();
+		return taskList;
 	}
 
 	@RequestMapping("/taskview")
@@ -44,7 +100,8 @@ public class SearchController {
 	@RequestMapping("submitsuccess")
 	public ModelAndView addNewTask(@RequestParam("usernameHost") String usernameHost, @RequestParam("date") String date,
 			@RequestParam("time") String time, @RequestParam("estimatedTime") int estimatedTime,
-			@RequestParam("skillsNeeded") String skillsNeeded, @RequestParam("city") String city, @RequestParam("title") String title, @RequestParam("address") String address) {
+			@RequestParam("skillsNeeded") String skillsNeeded, @RequestParam("city") String city,
+			@RequestParam("title") String title, @RequestParam("address") String address) {
 		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction(); // the transaction represents the unit of work or the actual
@@ -59,7 +116,6 @@ public class SearchController {
 		newTask.setCity(city);
 		newTask.setTitle(title);
 		newTask.setAddress(address);
-
 
 		session.save(newTask);
 		tx.commit();
