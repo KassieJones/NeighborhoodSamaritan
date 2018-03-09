@@ -2,6 +2,8 @@ package com.gc.controller;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpSession;
+
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -12,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.gc.model.User;
@@ -24,13 +27,15 @@ import com.gc.util.HibernateUtil;
  */
 
 @Controller
-//
+@SessionAttributes("user1")
 public class HomeController {
 
 	@RequestMapping("/welcome")
-	public ModelAndView welcomePage() {
-
+	public ModelAndView welcomePage(HttpSession session) {
 		String message = "";
+		
+		
+
 		return new ModelAndView("welcome", "message", message);
 	}
 
@@ -76,8 +81,12 @@ public class HomeController {
 	}
 
 	@RequestMapping("/mainmenu")
-	public ModelAndView menuPage() {
+	public ModelAndView menuPage(HttpSession session, @RequestParam("uName") String uName, @RequestParam("password") String password) {
 		String message = "";
+		User user1 = new User();
+		user1.setUsername(uName);
+		user1.setPassword(password);
+		session.setAttribute("user1", user1);
 
 		return new ModelAndView("mainmenu", "message", message);
 	}

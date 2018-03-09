@@ -1,9 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <html>
 <head>
-<title>View Task</title>
+<title>Task View</title>
 
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link rel="stylesheet"
@@ -94,18 +95,21 @@ p {
 
 		<div id="content">
 			<br> <br> <br> <br> <br>
-	<h3>Title</h3>
+	<h3>Tasks</h3>
 
-	<p>Date</p>
-	<p>Time</p>
-	<p>Location</p>
-	<p>Estimated Length of Task</p>
-	<p>Required Skills</p>
+	<table border = "1">
+	<c:forEach var="task" items="${taskList}">
+		<tr>
+			<td>${task.title}</td>
+			<td>${task.time}</td>
+			<td>${task.city}</td>
+			<td>${task.skillsNeeded}</td>
+			<td><a href="taskaccepted.html">Volunteer</a>
+		</tr>
 	
+	</c:forEach>
+</table>
 
-	<form action="taskaccepted.html">
-		<input type="submit" value="Volunteer" />
-	</form>
 	<br>
 	<form action="mainmenu.html">
 		<input type="submit" value="Return" />
@@ -113,6 +117,7 @@ p {
 		<div id="map"></div>
 
 	    <script>
+	    
 	 
       function initMap() {
     	var taskMarker = {lat: 44.5752311, lng: -84.1244802};
@@ -128,7 +133,7 @@ p {
       }
     </script>
     <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key= AIzaSyC4K4nnt7VvrmV17Fmw6SGVGQKurHtVCqs&callback=initMap">
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4K4nnt7VvrmV17Fmw6SGVGQKurHtVCqs&callback=initMap">
     </script>
    <!-- https://maps.googleapis.com/maps/api/geocode/json?address=####+street,+city,+mi&key=AIzaSyC4K4nnt7VvrmV17Fmw6SGVGQKurHtVCqs -->
 </div>

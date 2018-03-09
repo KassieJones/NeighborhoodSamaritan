@@ -36,7 +36,7 @@
   </div>
 
   <div id="tokenize">
-    <button type="submit">Tokenize!</button>
+    <button type="submit">Enter Payment</button>
   </div>
 </form>
 

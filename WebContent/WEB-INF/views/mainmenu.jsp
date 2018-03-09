@@ -103,6 +103,9 @@ p {
 </form>
 <form action="submitrequest.html">
     <input type="submit" value="Submit a New Task Request" />
+</form><br>
+<form action="userinfo.html">
+    <input type="submit" value="User Info" />
 </form>
 <form action="viewaccount.html">
     <input type="submit" value="Donate Here" />
