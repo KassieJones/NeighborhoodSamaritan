@@ -118,7 +118,8 @@ p {
 						<td>${myVar.time}</td>
 						<td>${myVar.estimatedTime}</td>
 						<td>${myVar.city}</td>
-						<td><a href="taskaccepted">Volunteer</a></td>
+						<td><button onclick="myFunction()">Volunteer</button></td>
+					<!--  <td><a href="taskaccepted">Volunteer</a></td>-->
 					</tr>
 				</c:forEach>
 			</table>
@@ -132,5 +133,11 @@ p {
 </div>
 </div>
 
+
+<script>
+function myFunction() {
+    alert("Please contact your host to arrange the details of your task opprtunity at ");
+}
+</script>
 </body>
 </html>
