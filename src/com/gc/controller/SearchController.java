@@ -48,32 +48,23 @@ public class SearchController {
 
 		//localList.addAll(taskList);
 		
-
 		for (int i = 0; i < taskList.size(); i++) {
 			
-			if (taskList.get(i).getCity().equalsIgnoreCase(city)) {
-				
-				localList.add(taskList.get(i));
-				
+			if (taskList.get(i).getCity().equalsIgnoreCase(city)) {	
+				localList.add(taskList.get(i));		
 			}
-					
-
 //			if (localList.get(i).getCity().equalsIgnoreCase(city)) {
 //				
 //				localList.add(k);
 //				
 //			}
-
 		}
-
 		// Iterator itr = localList.iterator();
 		// while (itr.hasNext()) {
 		// System.out.println(itr.next());
 		// }
-
 		return new ModelAndView("results", "localList", localList);
 	}
-
 	private ArrayList<Task> listAllTasks() throws HibernateException {
 		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 
