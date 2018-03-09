@@ -56,13 +56,7 @@ public class SearchController {
 				localList.add(taskList.get(i));
 				
 			}
-				
-				
-				
-				
-				
-				
-				
+					
 
 //			if (localList.get(i).getCity().equalsIgnoreCase(city)) {
 //				
