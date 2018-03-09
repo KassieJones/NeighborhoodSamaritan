@@ -104,7 +104,7 @@ p {
 			<td>${task.time}</td>
 			<td>${task.city}</td>
 			<td>${task.skillsNeeded}</td>
-			<td><a href="taskaccepted.html">Volunteer</a>
+			<td><button onclick="myFunction()">Volunteer</button></td>
 		</tr>
 	
 	</c:forEach>
@@ -138,5 +138,13 @@ p {
    <!-- https://maps.googleapis.com/maps/api/geocode/json?address=####+street,+city,+mi&key=AIzaSyC4K4nnt7VvrmV17Fmw6SGVGQKurHtVCqs -->
 </div>
 </div>
+<script>
+function myFunction() {
+	//need to add a phone number contact info to register page, map/link to here.  Don't show above
+
+    alert("Please contact your host to at their given number to arrange the details of your volunteer opportunity");
+}
+</script>
+
 </body>
 </html>
