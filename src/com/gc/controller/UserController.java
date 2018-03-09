@@ -1,8 +1,7 @@
 package com.gc.controller;
 
-import java.util.ArrayList;
+import javax.servlet.http.HttpSession;
 
-import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -19,15 +18,18 @@ public class UserController {
 	
 	
 	@RequestMapping("/userinfo")
-	public ModelAndView userInfo() {
+	public ModelAndView userInfo(HttpSession sessions) {
+		User user1 = (User) sessions.getAttribute("user1");
+		System.out.println(user1.getUsername());
 		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-		Session session = sessionFactory.openSession();
-		Transaction tx = session.beginTransaction();
-		Object myUser = session.get(User.class,1);
+		Session hibSession = sessionFactory.openSession();
+		Transaction tx = hibSession.beginTransaction();
+		Object myUser = hibSession.get(User.class,1);
 
 		tx.commit();
-		session.close();
+		hibSession.close();
+		
 
-		return new ModelAndView("userinfo","user", myUser);
+		return new ModelAndView("userinfo","user", user1);
 	}
 }
