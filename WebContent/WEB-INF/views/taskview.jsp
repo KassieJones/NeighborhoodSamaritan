@@ -97,18 +97,32 @@ p {
 			<br> <br> <br> <br> <br>
 	<h3>Tasks</h3>
 
-	<table border = "1">
-	<c:forEach var="task" items="${taskList}">
-		<tr>
-			<td>${task.title}</td>
-			<td>${task.time}</td>
-			<td>${task.city}</td>
-			<td>${task.skillsNeeded}</td>
-			<td><a href="taskaccepted.html">Volunteer</a>
-		</tr>
-	
-	</c:forEach>
-</table>
+			<table border="1" align="center">
+				<tr>
+					<th>Host</th>
+					<th>Title</th>
+					<th>Date</th>
+					<th>Time (Military Time)</th>
+					<th>Task Length (Hrs)</th>
+					<th>City</th>
+					<th>Phone</th>
+					<th>  </th>
+				</tr>
+
+				<c:forEach var="myVar" items="${taskList}">
+
+					<tr>
+						<td>${myVar.usernameHost}</td>
+						<td>${myVar.title}</td>
+						<td>${myVar.date}</td>
+						<td>${myVar.time}</td>
+						<td>${myVar.estimatedTime}</td>
+						<td>${myVar.city}</td>
+						<td>${myVar.phone}</td>
+						<td><button onclick="myFunction()">Volunteer</button></td>
+					</tr>
+				</c:forEach>
+			</table>
 
 	<br>
 	<form action="mainmenu.html">
@@ -138,5 +152,13 @@ p {
    <!-- https://maps.googleapis.com/maps/api/geocode/json?address=####+street,+city,+mi&key=AIzaSyC4K4nnt7VvrmV17Fmw6SGVGQKurHtVCqs -->
 </div>
 </div>
+<script>
+function myFunction() {
+	//need to add a phone number contact info to register page, map/link to here.  Don't show above
+
+    alert("Please contact your host to at their given number to arrange the details of your volunteer opportunity");
+}
+</script>
+
 </body>
 </html>

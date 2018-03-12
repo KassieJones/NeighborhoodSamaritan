@@ -97,7 +97,9 @@ p {
 
 <h3>Thank you for helping your neighbor!</h3>
 
-<p>insert contact option</p>
+<p>Please contact your host to arrange the details of your opportunity task.</p>
+
+
 
 <form action="mainmenu.html">
     <input type="submit" value="Return" />

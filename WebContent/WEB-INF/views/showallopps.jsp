@@ -107,6 +107,7 @@ p {
 					<th>Time (Military Time)</th>
 					<th>Task Length (Hrs)</th>
 					<th>City</th>
+					<th>Phone</th>
 					<th>  </th>
 				</tr>
 
@@ -119,7 +120,8 @@ p {
 						<td>${myVar.time}</td>
 						<td>${myVar.estimatedTime}</td>
 						<td>${myVar.city}</td>
-						<td><a href="taskaccepted">Volunteer</a></td>
+						<td>${myVar.phone}</td>
+						<td><button onclick="myFunction()">Volunteer</button></td>
 					</tr>
 				</c:forEach>
 			</table>
@@ -134,5 +136,13 @@ p {
 
 	</div>
 
+
+<script>
+function myFunction() {
+	//need to add a phone number contact info to register page, map/link to here.  Don't show above
+
+    alert("Please contact your host to at their given number to arrange the details of your volunteer opportunity");
+}
+</script>
 </body>
 </html>

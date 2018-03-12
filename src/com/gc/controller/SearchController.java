@@ -48,38 +48,23 @@ public class SearchController {
 
 		//localList.addAll(taskList);
 		
-
 		for (int i = 0; i < taskList.size(); i++) {
 			
-			if (taskList.get(i).getCity().equalsIgnoreCase(city)) {
-				
-				localList.add(taskList.get(i));
-				
+			if (taskList.get(i).getCity().equalsIgnoreCase(city)) {	
+				localList.add(taskList.get(i));		
 			}
-				
-				
-				
-				
-				
-				
-				
-
 //			if (localList.get(i).getCity().equalsIgnoreCase(city)) {
 //				
 //				localList.add(k);
 //				
 //			}
-
 		}
-
 		// Iterator itr = localList.iterator();
 		// while (itr.hasNext()) {
 		// System.out.println(itr.next());
 		// }
-
 		return new ModelAndView("results", "localList", localList);
 	}
-
 	private ArrayList<Task> listAllTasks() throws HibernateException {
 		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 
@@ -114,7 +99,7 @@ public class SearchController {
 	public ModelAndView addNewTask(@RequestParam("usernameHost") String usernameHost, @RequestParam("date") String date,
 			@RequestParam("time") String time, @RequestParam("estimatedTime") int estimatedTime,
 			@RequestParam("skillsNeeded") String skillsNeeded, @RequestParam("city") String city,
-			@RequestParam("title") String title, @RequestParam("address") String address) {
+			@RequestParam("title") String title, @RequestParam("address") String address, @RequestParam("phone") String phone) {
 		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction(); // the transaction represents the unit of work or the actual
@@ -129,6 +114,7 @@ public class SearchController {
 		newTask.setCity(city);
 		newTask.setTitle(title);
 		newTask.setAddress(address);
+		newTask.setPhone(phone);
 
 		session.save(newTask);
 		tx.commit();
