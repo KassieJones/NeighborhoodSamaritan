@@ -101,7 +101,7 @@ p {
 		<input type="text" placeholder="Enter User Name" name="uName" required><br>
 		
 		<label for="password"><b>Password</b></label><br>
-		<input type="text" placeholder="Enter Password" name="password" required><br><br>
+		<input type="password" placeholder="Enter Password" name="password" required><br><br>
 		
 		<input type="submit" value="Sign-In">
 		

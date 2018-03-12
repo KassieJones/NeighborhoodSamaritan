@@ -110,6 +110,7 @@ p {
 <form action="viewaccount.html">
     <input type="submit" value="Donate Here" />
 </form>
+${user}
 <br><br>
 </div>
 </div>

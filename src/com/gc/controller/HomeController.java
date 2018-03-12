@@ -9,6 +9,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,6 +30,30 @@ import com.gc.util.HibernateUtil;
 @Controller
 @SessionAttributes("user1")
 public class HomeController {
+
+
+		@RequestMapping("/mainmenu")
+		public ModelAndView menuPage(HttpSession session, @RequestParam("uName") String uName, @RequestParam("password") String password) {
+
+//			User user1 = new User();
+//			user1.setUsername(uName);
+//			user1.setPassword(password);
+//			session.setAttribute("user1", user1);
+		
+			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+			Session hibSession = sessionFactory.openSession();
+			Transaction tx = hibSession.beginTransaction();
+			
+			User sessionUser = new User();
+			session.setAttribute("sessionUser", User.class);
+			//(User) session.getAttribute("SessionUser");
+			String userCity = sessionUser.getCity();
+			
+			
+			
+	
+			return new ModelAndView("mainmenu", "user", userCity);
+		}
 
 	@RequestMapping("/welcome")
 	public ModelAndView welcomePage(HttpSession session) {
@@ -80,16 +105,6 @@ public class HomeController {
 
 	}
 
-	@RequestMapping("/mainmenu")
-	public ModelAndView menuPage(HttpSession session, @RequestParam("uName") String uName, @RequestParam("password") String password) {
-		String message = "";
-		User user1 = new User();
-		user1.setUsername(uName);
-		user1.setPassword(password);
-		session.setAttribute("user1", user1);
-
-		return new ModelAndView("mainmenu", "message", message);
-	}
 
 //	@RequestMapping("/viewaccount")
 //	public ModelAndView accountPage() {
