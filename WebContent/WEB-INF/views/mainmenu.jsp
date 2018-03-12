@@ -84,6 +84,7 @@ p {
 </style>
 </head>
 <body>
+${success}
 	<div id="container">
 		<div id="header">
 			<br>
