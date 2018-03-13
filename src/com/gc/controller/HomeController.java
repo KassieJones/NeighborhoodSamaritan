@@ -33,26 +33,26 @@ public class HomeController {
 
 
 		@RequestMapping("/mainmenu")
-		public ModelAndView menuPage(HttpSession session, @RequestParam("uName") String uName, @RequestParam("password") String password) {
+		public ModelAndView menuPage() {
 
 //			User user1 = new User();
 //			user1.setUsername(uName);
 //			user1.setPassword(password);
 //			session.setAttribute("user1", user1);
 		
-			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-			Session hibSession = sessionFactory.openSession();
-			Transaction tx = hibSession.beginTransaction();
-			
-			User sessionUser = new User();
-			session.setAttribute("sessionUser", User.class);
-			//(User) session.getAttribute("SessionUser");
-			String userCity = sessionUser.getCity();
+//			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+//			Session hibSession = sessionFactory.openSession();
+//			Transaction tx = hibSession.beginTransaction();
+//			
+//			User sessionUser = new User();
+//			session.setAttribute("sessionUser", User.class);
+//			//(User) session.getAttribute("SessionUser");
+//			String userCity = sessionUser.getCity();
 			
 			
 			
 	
-			return new ModelAndView("mainmenu", "user", userCity);
+			return new ModelAndView("mainmenu", "user", "");
 		}
 
 	@RequestMapping("/welcome")

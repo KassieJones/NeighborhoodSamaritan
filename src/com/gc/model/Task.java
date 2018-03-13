@@ -19,7 +19,7 @@ public class Task {
 	private String city;
 	private String title;
 	private String address;
-	private String phone;
+	private String email;
 	
 	public Task() {
 		super();
@@ -113,12 +113,12 @@ public class Task {
 		this.address = address;
 	}
 	
-	@Column (name = "Phone")
-	public String getPhone() {
-		return phone;
+	@Column (name = "Email")
+	public String getEmail() {
+		return email;
 	}
-	public void setPhone(String phone) {
-		this.phone = phone;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 
