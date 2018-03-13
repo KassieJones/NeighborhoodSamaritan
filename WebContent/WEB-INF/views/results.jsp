@@ -148,8 +148,9 @@ Confirm Your Phone Number:<br> <input type="text" name="doerPhone"><br>
 function myFunction() {
 	//need to add a phone number contact info to register page, map/link to here.  Don't show above
 
-    alert("Your contact information has been sent to the host to contact you and arrange the details of your opportunity,");
+    alert("Thank you so much! You are truly your brother's keeper. Your contact information has been sent to the host to contact you and arrange the details of your opportunity,");
 }
 </script>
 </body>
 </html>
+
