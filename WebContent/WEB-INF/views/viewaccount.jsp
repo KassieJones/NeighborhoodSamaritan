@@ -122,54 +122,38 @@ p {
 
 			<br> <br> <br>
 
-			<h3>Donation Options</h3>
+		
 
-			<br>
+<h3>Donation Options</h3>
+<br>
+<h4>Thank you for engaging with your community through Hood Samaritan</h4>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h3>Popular Charities and EIN numbers</h3>
+<br>
+<table border="1" align="center">
+<c:forEach var="myVar" items="${charList}">
+<tr>
+<td>${myVar.name}</td>
+<td>${myVar.ein}</td>
+</tr>
+</c:forEach>
+</table>
+<br>
+<br>
 
-			<h4>Thank you for engaging with your community through Hood
-				Samaritan</h4>
+If you don't see your preferred organization in the list above, or you would like to verify any of these please visit <a href="https://www.charitynavigator.org/">Charity Navigator</a>.
 
-			<br> <br> <br> <br> <br>
-
-			<h3>Popular Charities and EIN numbers</h3>
-
-			<br>
-
-			<table border="1" align="center">
-
-				<c:forEach var="myVar" items="${charList}">
-
-					<tr>
-
-						<td>${myVar.name}</td>
-
-						<td>${myVar.ein}</td>
-
-					</tr>
-
-				</c:forEach>
-
-			</table>
-
-			<br> <br> If you don't see your preferred organization in
-			the list above, or you would like to verify any of these please visit
-			<a href="https://www.charitynavigator.org/">Charity Navigator</a>. <br>
-
-			<br>
-
-			<form action="mainmenu.html">
-
-				<input type="submit" value="Return" />
-
-			</form>
-
-			<br>
-			<br>
-
-		</div>
-
-	</div>
-
+<br>
+<br>
+<form action="mainmenu.html">
+    <input type="submit" value="Return" />
+</form>
+<br><br>
+</div>
 </body>
 
 </html>
