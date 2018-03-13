@@ -1,19 +1,32 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
+
 <html>
+
 <head>
+
 <title>Donation Options</title>
 
+
+
 <link rel="stylesheet" type="text/css" href="styles.css">
+
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <!-- Favicon -->
+
 <link rel="shortcut icon"
 	href="https://files.slack.com/files-pri/T04UPFZ31-F9KERJV0T/finalprojecticon.png" />
+
+
 
 <style>
 body {
@@ -74,7 +87,8 @@ p {
 }
 
 #content {
-	text-align: center; width : 100%;
+	text-align: center;
+	width: 100%;
 	background-color: #EDAE49;
 	overflow-x: hidden;
 	clear: both;
@@ -83,28 +97,39 @@ p {
 	width: 100%;
 }
 </style>
+
 </head>
+
 <body>
+
 	<div id="container">
+
 		<div id="header">
+
 			<br>
+
 			<h1>HOOD SAMARITAN</h1>
+
 			<h2>Engage | Donate | Inspire</h2>
+
 			<br>
+
 		</div>
 
+
+
 		<div id="content">
-			<br> <br> <br> <br> <br>
+
+			<br> <br> <br>
+
+		
+
 <h3>Donation Options</h3>
 <br>
 <h4>Thank you for engaging with your community through Hood Samaritan</h4>
 <br>
-
-If you don't see your preferred organization in the below list, please <a href="http://panda-search.s3-website-us-east-1.amazonaws.com/">click here</a> to locate it.
-
 <br>
 <br>
---Insert DONATE option with PayPanda--
 <br>
 <br>
 <h3>Popular Charities and EIN numbers</h3>
@@ -117,6 +142,10 @@ If you don't see your preferred organization in the below list, please <a href="
 </tr>
 </c:forEach>
 </table>
+<br>
+<br>
+
+If you don't see your preferred organization in the list above, or you would like to verify any of these please visit <a href="https://www.charitynavigator.org/">Charity Navigator</a>.
 
 <br>
 <br>
@@ -125,6 +154,6 @@ If you don't see your preferred organization in the below list, please <a href="
 </form>
 <br><br>
 </div>
-</div>
 </body>
+
 </html>

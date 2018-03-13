@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -74,7 +74,8 @@ p {
 }
 
 #content {
-	text-align: center; width : 100%;
+	text-align: center;
+	width: 100%;
 	background-color: #EDAE49;
 	overflow-x: hidden;
 	clear: both;
@@ -95,8 +96,8 @@ p {
 
 		<div id="content">
 			<br> <br> <br> <br> <br>
-<h3>Task Opportunity Results</h3>
-<br>
+			<h3>Task Opportunity Results</h3>
+			<br>
 
 			<table border="1" align="center">
 				<tr>
@@ -106,6 +107,7 @@ p {
 					<th>Time (Military Time)</th>
 					<th>Task Length (Hrs)</th>
 					<th>City</th>
+					<th>ID</th>
 					<th>  </th>
 				</tr>
 
@@ -118,26 +120,37 @@ p {
 						<td>${myVar.time}</td>
 						<td>${myVar.estimatedTime}</td>
 						<td>${myVar.city}</td>
-						<td><button onclick="myFunction()">Volunteer</button></td>
-					<!--  <td><a href="taskaccepted">Volunteer</a></td>-->
+						<td>${myVar.id}</td>
 					</tr>
 				</c:forEach>
 			</table>
 
+
+
+	<form action="send" method="post">
+Enter Task ID for Volunteer Opportunity:<br> <input type="text" name="id"><br>
+Confirm Your Email:<br> <input type="text" name="doerEmail"><br>
+Confirm Your Phone Number:<br> <input type="text" name="doerPhone"><br>
+		<input type="submit" value="Submit Request">
+	</form>
 			<br> <br>
 			<form action="mainmenu.html">
 				<input type="submit" value="Return" />
 			</form>
+			<br>
+			<br>
+		</div>
 
-<br><br>
-</div>
-</div>
+	</div>
 
 
 <script>
 function myFunction() {
-    alert("Please contact your host to at their given number to arrange the details of your volunteer opportunity.");
+	//need to add a phone number contact info to register page, map/link to here.  Don't show above
+
+    alert("Thank you so much! You are truly your brother's keeper. Your contact information has been sent to the host to contact you and arrange the details of your opportunity,");
 }
 </script>
 </body>
 </html>
+

@@ -17,19 +17,19 @@ public class UserController {
 	
 	
 	
-	@RequestMapping("/userinfo")
-	public ModelAndView userInfo(HttpSession sessions) {
-		User user1 = (User) sessions.getAttribute("user1");
-		System.out.println(user1.getUsername());
-		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-		Session hibSession = sessionFactory.openSession();
-		Transaction tx = hibSession.beginTransaction();
-		Object myUser = hibSession.get(User.class,1);
-
-		tx.commit();
-		hibSession.close();
-		
-
-		return new ModelAndView("userinfo","user", user1);
-	}
+//	@RequestMapping("/userinfo")
+//	public ModelAndView userInfo(HttpSession sessions) {
+//		User user1 = (User) sessions.getAttribute("user1");
+//		System.out.println(user1.getUsername());
+//		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+//		Session hibSession = sessionFactory.openSession();
+//		Transaction tx = hibSession.beginTransaction();
+//		Object myUser = hibSession.get(User.class,1);
+//
+//		tx.commit();
+//		hibSession.close();
+//		
+//
+//		return new ModelAndView("userinfo","user", user1);
+//	}
 }

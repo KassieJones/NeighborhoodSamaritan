@@ -33,6 +33,7 @@ public class HomeController {
 
 
 		@RequestMapping("/mainmenu")
+
 		public ModelAndView menuPage(@RequestParam ("idToken") String idToken,@RequestParam("userId") String userId) {
 
 //			User user1 = new User();
@@ -40,6 +41,8 @@ public class HomeController {
 ////			user1.setPassword(password);
 ////			session.setAttribute("user1", user1);
 //		
+
+
 //			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 //			Session hibSession = sessionFactory.openSession();
 //			Transaction tx = hibSession.beginTransaction();
@@ -48,9 +51,10 @@ public class HomeController {
 //			session.setAttribute("sessionUser", User.class);
 //			//(User) session.getAttribute("SessionUser");
 //			String userCity = sessionUser.getCity();
-//			
+		
 			System.out.println(idToken);
 			System.out.print(userId);
+
 			
 	
 			return new ModelAndView("mainmenu", "user", "");
