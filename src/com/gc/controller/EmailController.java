@@ -73,8 +73,8 @@ System.out.println(hostName);
 	                            .put("Email", hostEmail)
 	                            .put("Name", hostName)))
 	                    .put(Emailv31.Message.SUBJECT, "Someone would like to help you!")
-	                    .put(Emailv31.Message.TEXTPART, "Dear passenger 1, welcome to Mailjet! May the delivery force be with you!")
-	                    .put(Emailv31.Message.HTMLPART, "<h3>Dear passenger 1, welcome to Mailjet!</h3><br />May the delivery force be with you!")));
+	                    .put(Emailv31.Message.TEXTPART, "Dear " + hostName + ", \n  We found you a match! \n Please contact your volunteer at " + doerEmail + " or " + doerPhone + " to set-up the terms of the volunteer opportunity! \n  Thanks for being a valued member of Hood Samaritan!")
+	                    .put(Emailv31.Message.HTMLPART, "<p>Dear " + hostName + ", </p> <p>We have found you a match!<br>Please contact your volunteer at the email or phone number below, identify yourself and the opportunity to arrange the details of the task you need.  <br><br>CONTACT INFORMATION: <br></p>" + doerEmail + "<br>" + doerPhone + "<br><br>Thank you for being part of the Hood Samaritan community!")));
 	      response = client.post(request);
 	      System.out.println(response.getStatus());
 	      System.out.println(response.getData());
