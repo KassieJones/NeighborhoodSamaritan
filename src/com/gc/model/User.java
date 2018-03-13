@@ -18,7 +18,9 @@ public class User {
 	private String phone;
 	private String city;
 	private String address;
+	private String googleID;
 	
+
 
 	public User() {
 		
@@ -118,5 +120,12 @@ public class User {
 		this.address = address;
 	}
 	
-
+	@Column(name = "GoogleID")
+	public String getGoogleID() {
+		return googleID;
+	}
+	
+	public void setGoogleID(String googleID) {
+		this.googleID = googleID;
+	}
 }

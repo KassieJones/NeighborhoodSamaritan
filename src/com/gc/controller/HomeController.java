@@ -28,7 +28,7 @@ import com.gc.util.HibernateUtil;
  */
 
 @Controller
-@SessionAttributes("user1")
+
 public class HomeController {
 
 
@@ -36,28 +36,31 @@ public class HomeController {
 
 		public ModelAndView menuPage(@RequestParam ("idToken") String idToken,@RequestParam("userId") String userId) {
 
-//			User user1 = new User();
-//			user1.setUsername(uName);
-////			user1.setPassword(password);
-////			session.setAttribute("user1", user1);
-//		
-
-
-//			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-//			Session hibSession = sessionFactory.openSession();
-//			Transaction tx = hibSession.beginTransaction();
-//			
-//			User sessionUser = new User();
-//			session.setAttribute("sessionUser", User.class);
-//			//(User) session.getAttribute("SessionUser");
-//			String userCity = sessionUser.getCity();
+		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+		Session session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
 		
+		Criteria crit = session.createCriteria(User.class);
+        crit.add(Restrictions.eq("googleID",userId));
+
+        User user = (User) crit.uniqueResult();
+        session.getTransaction().commit();
+        
+        if(user==null) {
+        	return new ModelAndView("registration", "userId", userId);
+        	
+        } else {
+        
+
+			
+
 			System.out.println(idToken);
 			System.out.print(userId);
 
 			
 	
-			return new ModelAndView("mainmenu", "user", "");
+			return new ModelAndView("mainmenu", "user", userId);
+        }
 		}
 
 	@RequestMapping("/welcome")
@@ -89,8 +92,7 @@ public class HomeController {
 			@RequestParam("email") String email, @RequestParam("phone") String phone, @RequestParam("city") String city, @RequestParam("address") String address) {
 		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 		Session session = sessionFactory.openSession();
-		Transaction tx = session.beginTransaction(); // the transaction represents the unit of work or the actual
-														// implemention of of our code
+		Transaction tx = session.beginTransaction(); 
 
 		User newUser = new User();
 		newUser.setUsername(username);
