@@ -99,12 +99,8 @@ p {
 <br>
 <h4>Thank you for engaging with your community through Hood Samaritan</h4>
 <br>
-
-If you don't see your preferred organization in the below list, please <a href="http://panda-search.s3-website-us-east-1.amazonaws.com/">click here</a> to locate it.
-
 <br>
 <br>
---Insert DONATE option with PayPanda--
 <br>
 <br>
 <h3>Popular Charities and EIN numbers</h3>
@@ -117,6 +113,10 @@ If you don't see your preferred organization in the below list, please <a href="
 </tr>
 </c:forEach>
 </table>
+<br>
+<br>
+
+If you don't see your preferred organization in the list above, or you would like to verify any of these please visit <a href="https://www.charitynavigator.org/">Charity Navigator</a>.
 
 <br>
 <br>
