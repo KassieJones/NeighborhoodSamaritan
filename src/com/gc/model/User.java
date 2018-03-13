@@ -19,7 +19,9 @@ public class User {
 	private String city;
 	private String address;
 	private String charityPref;
+	private String googleID;
 	
+
 
 	public User() {
 		
@@ -126,6 +128,15 @@ public class User {
 	
 	public void setCharityPref(String charityPref) {
 		this.charityPref = charityPref;
+	}
+
+	@Column(name = "GoogleID")
+	public String getGoogleID() {
+		return googleID;
+	}
+	
+	public void setGoogleID(String googleID) {
+		this.googleID = googleID;
 	}
 
 }

@@ -11,6 +11,7 @@
 <body>
 <div style="text-align: center">
 <h1>Register!</h1>		
+<input type="hidden" name="id" value="${user}">
 </div>
 
 
