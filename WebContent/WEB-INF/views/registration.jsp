@@ -42,7 +42,10 @@
 		<input type="text" placeholder="Enter City" name="city" required><br>
 		
 		 <label for="pNumber"><b>Phone Number</b></label><br>
-		<input type="text" placeholder="Enter Phone Number" name="phone" required><br><br>
+		<input type="text" placeholder="Enter Phone Number" name="phone" required><br>
+		
+		<label for="charityPref"><b>Preferred Charity</b></label><br>
+		<input type="text" placeholder="Enter a Charity Name" name="charityPref" required><br><br>
 		
 		<input type="submit" value="Register">
 		

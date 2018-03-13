@@ -18,6 +18,7 @@ public class User {
 	private String phone;
 	private String city;
 	private String address;
+	private String charityPref;
 	
 
 	public User() {
@@ -118,5 +119,13 @@ public class User {
 		this.address = address;
 	}
 	
+	@Column(name = "CharityPref")
+	public String getCharityPref() {
+		return charityPref;
+	}
+	
+	public void setCharityPref(String charityPref) {
+		this.charityPref = charityPref;
+	}
 
 }
