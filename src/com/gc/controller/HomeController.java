@@ -90,7 +90,7 @@ public class HomeController {
 	@RequestMapping("registrationsuccess")
 	public ModelAndView addNewUser(@RequestParam("id") String userId, @RequestParam("username") String username, @RequestParam("password") String password,
 			@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName,
-			@RequestParam("email") String email, @RequestParam("phone") String phone, @RequestParam("city") String city, @RequestParam("address") String address) {
+			@RequestParam("email") String email, @RequestParam("phone") String phone, @RequestParam("city") String city, @RequestParam("address") String address, @RequestParam("charityPref") String charityPref) {
 		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction(); 
@@ -105,6 +105,7 @@ public class HomeController {
 		newUser.setPhone(phone);
 		newUser.setCity(city);
 		newUser.setAddress(address);
+		newUser.setCharityPref(charityPref);
 
 		session.save(newUser);
 		tx.commit();

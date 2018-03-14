@@ -31,98 +31,90 @@ import com.mailjet.client.resource.Emailv31;
 @Controller
 public class EmailController {
 	@RequestMapping("/send")
-
-	public ModelAndView sendEmail(@RequestParam("doerEmail") String doerEmail,
-			@RequestParam("charityPref") String charityPref, @RequestParam("doerPhone") String doerPhone,
-			@RequestParam("id") int id) throws MailjetException, MailjetSocketTimeoutException {
-
+	
+	public ModelAndView sendEmail(@RequestParam ("doerEmail") String doerEmail, @RequestParam ("charityPref") String charityPref, @RequestParam ("doerPhone") String doerPhone, @RequestParam ("id") int id) throws MailjetException, MailjetSocketTimeoutException{
+		
 		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 		Session session = sessionFactory.openSession();
-		Transaction tx = session.beginTransaction();
-
-		// Query query = session.createQuery("SELECT usernameHost FROM task WHERE
-		// id=1007");
+		Transaction tx = session.beginTransaction(); 
+		
+//		Query query = session.createQuery("SELECT usernameHost FROM task WHERE id=1007");
 		Criteria crit = session.createCriteria(Task.class);
 		crit.add(Restrictions.eq("id", id));
-		// query.setParameter("i", id);
-
+		//query.setParameter("i", id);
+		
+		
+		
 		Task task_test = (Task) crit.uniqueResult();
 		String hostName = task_test.getUsernameHost();
 		String hostEmail = task_test.getEmail();
 		tx.commit();
 		session.close();
+		
+		
+System.out.println(doerEmail);
+System.out.println(doerPhone);
+System.out.println(id);
+System.out.println(hostEmail);
+System.out.println(hostName);
+System.out.println(charityPref);
+		
+	      MailjetClient client;
+	      MailjetRequest request;
+	      MailjetResponse response;
+	      client = new MailjetClient(APICredentials.mailJetPKey,APICredentials.mailJetSKey, new ClientOptions("v3.1"));
+	      request = new MailjetRequest(Emailv31.resource)
+	            .property(Emailv31.MESSAGES, new JSONArray()
+	                .put(new JSONObject()
+	                    .put(Emailv31.Message.FROM, new JSONObject()
+	                        .put("Email", "contact@hoodsamaritan.org")
+	                        .put("Name", "HoodSamaritanTeam"))
+	                    .put(Emailv31.Message.TO, new JSONArray()
+	                        .put(new JSONObject()
+	                            .put("Email", hostEmail)
+	                            .put("Name", hostName)))
+	                    .put(Emailv31.Message.SUBJECT, "Someone would like to help you!")
+	                    .put(Emailv31.Message.TEXTPART, "Dear " + hostName + ", \n  We found you a match! \n Please contact your volunteer at " + doerEmail + " or " + doerPhone + " to set-up the terms of the volunteer opportunity! \n  Thanks for being a valued member of Hood Samaritan!")
+	                    .put(Emailv31.Message.HTMLPART, "<p>Dear " + hostName + ", </p> <p>We have found you a match!<br>Please contact your volunteer at the email or phone number below, identify yourself and the opportunity to arrange the details of the task you need.  <br><br>CONTACT INFORMATION: <br></p>" + doerEmail + "<br>" + doerPhone + "<br>This is the helper's preferred charity: " + charityPref + "<br>Thank you for being part of the Hood Samaritan community!")));
+	      response = client.post(request);
+	      System.out.println(response.getStatus());
+	      System.out.println(response.getData());
+	      String success = "success";
+	
+	      return new ModelAndView("mainmenu","success",success);
+		
+	}	
+		
+		private ArrayList<Task> listAllTasks() throws HibernateException {
+			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 
-		System.out.println(doerEmail);
-		System.out.println(doerPhone);
-		System.out.println(id);
-		System.out.println(hostEmail);
-		System.out.println(hostName);
-		System.out.println(charityPref);
+			Session session = sessionFactory.openSession();
+			Transaction tx = session.beginTransaction(); // the transaction represents the unit of work or the actual
+															// implemention of of our code
+			Criteria crit = session.createCriteria(Task.class);
+			ArrayList<Task> taskList = (ArrayList<Task>) crit.list();
+			System.out.println(taskList.size());
 
-		MailjetClient client;
-		MailjetRequest request;
-		MailjetResponse response;
-		client = new MailjetClient(APICredentials.mailJetPKey, APICredentials.mailJetSKey, new ClientOptions("v3.1"));
-		request = new MailjetRequest(
-				Emailv31.resource)
-						.property(Emailv31.MESSAGES,
-								new JSONArray().put(new JSONObject()
-										.put(Emailv31.Message.FROM,
-												new JSONObject().put("Email", "contact@hoodsamaritan.org").put("Name",
-														"HoodSamaritanTeam"))
-										.put(Emailv31.Message.TO,
-												new JSONArray().put(new JSONObject().put("Email", hostEmail)
-														.put("Name", hostName)))
-										.put(Emailv31.Message.SUBJECT, "Someone would like to help you!")
-										.put(Emailv31.Message.TEXTPART, "Dear "
-												+ hostName
-												+ ", \n  We found you a match! \n Please contact your volunteer at "
-												+ doerEmail + " or " + doerPhone
-												+ " to set-up the terms of the volunteer opportunity! \n  Thanks for being a valued member of Hood Samaritan!")
-										.put(Emailv31.Message.HTMLPART, "<p>Dear " + hostName
-												+ ", </p> <p>We have found you a match!<br>Please contact your volunteer at the email or phone number below, identify yourself and the opportunity to arrange the details of the task you need.  <br><br>CONTACT INFORMATION: <br></p>"
-												+ doerEmail + "<br>" + doerPhone
-												+ "<br>This is the helper's preferred charity: " + charityPref
-												+ "<br>Thank you for being part of the Hood Samaritan community!")));
-		response = client.post(request);
-		System.out.println(response.getStatus());
-		System.out.println(response.getData());
-		String success = "success";
+			// model.addAttribute("specificItem", charList.get(2).getName());
+			tx.commit();
+			session.close();
+			return taskList;
+		}
+		
+		private ArrayList<User> listAllUsers () throws HibernateException {
+			SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 
-		return new ModelAndView("mainmenu", "success", success);
+			Session session = sessionFactory.openSession();
+			Transaction tx = session.beginTransaction(); // the transaction represents the unit of work or the actual
+															// implemention of of our code
+			Criteria crit = session.createCriteria(User.class);
+			ArrayList<User> userList = (ArrayList<User>) crit.list();
+			System.out.println(userList.size());
 
-	}
-
-	private ArrayList<Task> listAllTasks() throws HibernateException {
-		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-
-		Session session = sessionFactory.openSession();
-		Transaction tx = session.beginTransaction(); // the transaction represents the unit of work or the actual
-														// implemention of of our code
-		Criteria crit = session.createCriteria(Task.class);
-		ArrayList<Task> taskList = (ArrayList<Task>) crit.list();
-		System.out.println(taskList.size());
-
-		// model.addAttribute("specificItem", charList.get(2).getName());
-		tx.commit();
-		session.close();
-		return taskList;
-	}
-
-	private ArrayList<User> listAllUsers() throws HibernateException {
-		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-
-		Session session = sessionFactory.openSession();
-		Transaction tx = session.beginTransaction(); // the transaction represents the unit of work or the actual
-														// implemention of of our code
-		Criteria crit = session.createCriteria(User.class);
-		ArrayList<User> userList = (ArrayList<User>) crit.list();
-		System.out.println(userList.size());
-
-		// model.addAttribute("specificItem", charList.get(2).getName());
-		tx.commit();
-		session.close();
-		return userList;
-	}
-
+			// model.addAttribute("specificItem", charList.get(2).getName());
+			tx.commit();
+			session.close();
+			return userList;
+		}
+	
 }

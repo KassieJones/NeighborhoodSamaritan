@@ -127,15 +127,14 @@ p {
 
 
 
-			<form action="send" method="post">
-				Enter Task ID for Volunteer Opportunity:<br> <input type="text"
-					name="id"><br> Confirm Your Email:<br> <input
-					type="text" name="doerEmail"><br> Confirm Your Phone
-				Number:<br> <input type="text" name="doerPhone"><br>
-				Enter Your Preferred Charity:<br> <input type="text"
-					name="charityPref"><br> <input type="submit"
-					value="Submit Request">
-			</form>
+
+	<form action="send" method="post">
+Enter Task ID for Volunteer Opportunity:<br> <input type="text" name="id"><br>
+Confirm Your Email:<br> <input type="text" name="doerEmail"><br>
+Confirm Your Phone Number:<br> <input type="text" name="doerPhone"><br>
+Enter Your Preferred Charity:<br> <input type="text" name="charityPref"><br>
+		<input type="submit" value="Submit Request">
+	</form>
 			<br> <br>
 			<form action="mainmenu.html">
 				<input type="submit" value="Return" />
