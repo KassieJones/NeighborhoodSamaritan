@@ -15,7 +15,7 @@
 
 	</div>
 
-
+<form>
 	<div class="container">
 <input type="hidden" name="id" value="${user}">
 	    <label for="uName"><b>User Name</b></label><br>
