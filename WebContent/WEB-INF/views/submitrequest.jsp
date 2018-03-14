@@ -99,15 +99,15 @@ p {
 <p>Please enter the information associated with your request.</p>
 <br>
 	<form action="submitsuccess" method="post">
-		Title:<br> <input type="text" name="title"><br>
-		Username:<br> <input type="text" name="usernameHost"><br>
-		Date:<br> <input type="text" name="date"><br>
-		Time:<br> <input type="text" name="time"><br>
-		Estimated Job Length:<br> <input type="text" name="estimatedTime"><br>
-		Required Skills:<br> <input type="text" name="skillsNeeded"><br>
-		Address:<br> <input type="text" name="address"><br>
-		City:<br> <input type="text" name="city"><br>
-		Email:<br> <input type="text" name="email"><br>
+		Title:<br> <input type="text" name="title" required><br>
+		Username:<br> <input type="text" name="usernameHost" required><br>
+		Date:<br> <input type="text" name="date" required><br>
+		Time:<br> <input type="text" name="time" required><br>
+		Estimated Job Length:<br> <input type="text" name="estimatedTime" required><br>
+		Required Skills:<br> <input type="text" name="skillsNeeded" required><br>
+		Address:<br> <input type="text" name="address" required><br>
+		City:<br> <input type="text" name="city" required><br>
+		Email:<br> <input type="text" name="email" required><br>
 		<input type="submit" value="Submit Request">
 	</form>
 	<br><br>
