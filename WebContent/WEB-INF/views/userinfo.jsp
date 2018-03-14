@@ -8,22 +8,12 @@
 <title>User Info</title>
 </head>
 <body>
-<div id="content">
+<div>
 			<br> <br> <br> <br> <br>
 			<h3>User Info</h3>
+			${message}
 			<br>
 
-			<table border="1" align="center">
-				<tr>
-					<th>User Name</th>
-					<th>Name</th>
-					<th>Email</th>
-					<th>Phone</th>
-					<th>Address</th>
-					<th>Hours Donated</th>
-				
-					<th></th>
-				</tr>
 				User Name:
 				Name:
 				Email:
@@ -31,19 +21,8 @@
 				Address:
 				Hours Donated
 
-				<c:forEach var="myVar" items="${taskList}">
-
-					<tr>
-						<td>${myVar.usernameHost}</td>
-						<td>${myVar.title}</td>
-						<td>${myVar.date}</td>
-						<td>${myVar.time}</td>
-						<td>${myVar.estimatedTime}</td>
-						<td>${myVar.city}</td>
-						<td>${myVar.id}</td>
-					</tr>
-				</c:forEach>
-			</table>
-
+				
+			
+</div>
 </body>
 </html>

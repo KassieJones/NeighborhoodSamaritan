@@ -15,7 +15,7 @@
 
 	</div>
 
-
+<form>
 	<div class="container">
 	<form action="registrationsuccess" method="post">
 		<input type="hidden" name="id" value="${userId}">

@@ -120,10 +120,10 @@ public class HomeController {
 
 
 	@RequestMapping("/userinfo")
-	public ModelAndView accountPage() {
-		String message = "";
+	public ModelAndView accountPage(@RequestParam("userId") String user) {
+		System.out.println(user);
 
-		return new ModelAndView("userinfo", "message", message);
+		return new ModelAndView("userinfo", "message", user);
 	}
 
 	@RequestMapping("/submitrequest")
