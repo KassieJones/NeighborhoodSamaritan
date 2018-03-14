@@ -108,7 +108,7 @@ p {
 					<th>Task Length (Hrs)</th>
 					<th>City</th>
 					<th>ID</th>
-					<th>  </th>
+					<th></th>
 				</tr>
 
 				<c:forEach var="myVar" items="${taskList}">
@@ -127,30 +127,31 @@ p {
 
 
 
+
 	<form action="send" method="post">
 Enter Task ID for Volunteer Opportunity:<br> <input type="text" name="id"><br>
 Confirm Your Email:<br> <input type="text" name="doerEmail"><br>
 Confirm Your Phone Number:<br> <input type="text" name="doerPhone"><br>
+Enter Your Preferred Charity:<br> <input type="text" name="charityPref"><br>
 		<input type="submit" value="Submit Request">
 	</form>
 			<br> <br>
 			<form action="mainmenu.html">
 				<input type="submit" value="Return" />
 			</form>
-			<br>
-			<br>
+			<br> <br>
 		</div>
 
 	</div>
 
 
-<script>
-function myFunction() {
-	//need to add a phone number contact info to register page, map/link to here.  Don't show above
+	<script>
+		function myFunction() {
+			//need to add a phone number contact info to register page, map/link to here.  Don't show above
 
-    alert("Thank you so much! You are truly your brother's keeper. Your contact information has been sent to the host to contact you and arrange the details of your opportunity,");
-}
-</script>
+			alert("Thank you so much! You are truly your brother's keeper. Your contact information has been sent to the host to contact you and arrange the details of your opportunity,");
+		}
+	</script>
 </body>
 </html>
 

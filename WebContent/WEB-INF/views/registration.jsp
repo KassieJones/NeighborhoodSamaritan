@@ -11,6 +11,7 @@
 <body>
 <div style="text-align: center">
 <h1>Register!</h1>		
+<input type="hidden" name="id" value="${user}">
 </div>
 
 
@@ -43,6 +44,10 @@
 		
 		 <label for="pNumber"><b>Phone Number</b></label><br>
 		<input type="text" placeholder="Enter Phone Number" name="phone" required title="ex. XXX-XXX-XXXX or XXXXXXXXXX" required onchange="validateNumber()"><br><br>
+		
+		<label for="charityPref"><b>Preferred Charity</b></label><br>
+		<input type="text" placeholder="Enter a Charity Name" name="charityPref" required><br><br>
+
 		
 		<input type="submit" value="Register">
 		

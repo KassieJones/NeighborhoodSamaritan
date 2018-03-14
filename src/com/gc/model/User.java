@@ -1,5 +1,7 @@
 package com.gc.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -8,7 +10,7 @@ import javax.persistence.Table;
 @Entity // marks the class as a hibernate entity (mapped class)
 @Table(name = "user") // maps the class to the DB table specified by the name modifier
 
-public class User {
+public class User implements Serializable{
 	private int id;
 	private String username;
 	private String password;
@@ -18,6 +20,9 @@ public class User {
 	private String phone;
 	private String city;
 	private String address;
+	private String charityPref;
+	private String googleID;
+	private Integer	hours;
 	
 
 	public User() {
@@ -118,5 +123,29 @@ public class User {
 		this.address = address;
 	}
 	
+	@Column(name = "CharityPref")
+	public String getCharityPref() {
+		return charityPref;
+	}
+	
+	public void setCharityPref(String charityPref) {
+		this.charityPref = charityPref;
+	}
 
+	@Column(name = "GoogleID")
+	public String getGoogleID() {
+		return googleID;
+	}
+	
+	public void setGoogleID(String googleID) {
+		this.googleID = googleID;
+	}
+	@Column(name = "Hours")
+	public Integer getHours() {
+		return hours;
+	}
+	
+	public void setHours(Integer hours) {
+		this.hours = hours;
+	}
 }
