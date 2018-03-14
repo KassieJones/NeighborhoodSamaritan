@@ -1,23 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <!-- Favicon -->
-<link rel="shortcut icon" href="https://files.slack.com/files-pri/T04UPFZ31-F9KERJV0T/finalprojecticon.png" />
+<link rel="shortcut icon"
+	href="https://files.slack.com/files-pri/T04UPFZ31-F9KERJV0T/finalprojecticon.png" />
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Registration</title>
 </head>
 <body>
-<div style="text-align: center">
-<h1>Register!</h1>		
-<input type="hidden" name="id" value="${user}">
-</div>
+	<div style="text-align: center">
+		<h1>Register!</h1>
+
+	</div>
 
 
-	<form action="registrationsuccess" method="post">
 	<div class="container">
-
+<input type="hidden" name="id" value="${user}">
 	    <label for="uName"><b>User Name</b></label><br>
 		<input type="text" placeholder="Enter User Name" name="username" required><br>
 		
@@ -104,5 +104,6 @@ function validateNumber(){
 	        }
 	}
 </script>
+
 </body>
 </html>

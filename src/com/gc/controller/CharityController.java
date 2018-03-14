@@ -26,7 +26,7 @@ import com.gc.util.HibernateUtil;
 @Controller
 public class CharityController {
 	
-	@RequestMapping("/viewaccount")
+	@RequestMapping("/donate")
 	// this is listing all the data from the product class
 	public ModelAndView helloWorld(Model model) {
 
@@ -37,7 +37,7 @@ public class CharityController {
 		ArrayList<Charity> charList = listAllCharities();
 		model.addAttribute("specificItem", charList.get(2).getName());
 
-		return new ModelAndView("viewaccount", "charList", charList);
+		return new ModelAndView("donate", "charList", charList);
 	}
 
 	

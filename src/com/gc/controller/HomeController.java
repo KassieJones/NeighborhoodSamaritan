@@ -116,12 +116,12 @@ public class HomeController {
 	}
 
 
-//	@RequestMapping("/viewaccount")
-//	public ModelAndView accountPage() {
-//		String message = "";
-//
-//		return new ModelAndView("viewaccount", "message", message);
-//	}
+	@RequestMapping("/userinfo")
+	public ModelAndView accountPage() {
+		String message = "";
+
+		return new ModelAndView("userinfo", "message", message);
+	}
 
 	@RequestMapping("/submitrequest")
 	public ModelAndView requestPage() {

@@ -108,7 +108,7 @@ ${success}
 <form action="userinfo.html">
     <input type="submit" value="User Info" />
 </form>
-<form action="viewaccount.html">
+<form action="donate.html">
     <input type="submit" value="Donate Here" />
 </form>
 
