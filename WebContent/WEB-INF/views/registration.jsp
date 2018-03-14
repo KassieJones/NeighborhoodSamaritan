@@ -17,7 +17,8 @@
 
 
 	<div class="container">
-<input type="hidden" name="id" value="${user}">
+	<form>
+<input type="hidden" name="id" value="${userId}">
 	    <label for="uName"><b>User Name</b></label><br>
 		<input type="text" placeholder="Enter User Name" name="username" required><br>
 		
@@ -51,9 +52,9 @@
 		
 		<input type="submit" value="Register">
 		
+		</form>
 		</div>
 
-	</form>
 ${registration }
 
 <script type="text/javascript">
