@@ -34,7 +34,7 @@
 		<input type="text" placeholder="Enter First Name" name="firstName" required><br>
 		
 		<label for="lName"><b>Last Name</b></label><br>
-		<input type="text" placeholder="Enter Last Name" name="lastName" required onchange="validateName()"><br>
+		<input type="text" placeholder="Enter Last Name" name="lastName" required><br>
 		
 		<label for="address"><b>Address</b></label><br>
 		<input type="text" placeholder="Enter Address" name="address" required><br>
@@ -43,7 +43,7 @@
 		<input type="text" placeholder="Enter City" name="city" required><br>
 		
 		 <label for="pNumber"><b>Phone Number</b></label><br>
-		<input type="text" placeholder="Enter Phone Number" name="phone" required title="ex. XXX-XXX-XXXX or XXXXXXXXXX" required onchange="validateNumber()"><br><br>
+		<input type="text" placeholder="Enter Phone Number" name="phone" required><br><br>
 		
 		<label for="charityPref"><b>Preferred Charity</b></label><br>
 		<input type="text" placeholder="Enter a Charity Name" name="charityPref" required><br><br>
