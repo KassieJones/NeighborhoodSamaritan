@@ -47,6 +47,7 @@ public class HomeController {
         session.getTransaction().commit();
         
         if(user==null) {
+        	System.out.print(userId);
         	return new ModelAndView("registration", "userId", userId);
         	
         } else {
@@ -59,7 +60,7 @@ public class HomeController {
 
 			
 	
-			return new ModelAndView("mainmenu", "user", userId);
+			return new ModelAndView("mainmenu", "userId", userId);
         }
 		}
 
@@ -87,7 +88,7 @@ public class HomeController {
 	}
 
 	@RequestMapping("registrationsuccess")
-	public ModelAndView addNewUser(@RequestParam("username") String username, @RequestParam("password") String password,
+	public ModelAndView addNewUser(@RequestParam("id") String userId, @RequestParam("username") String username, @RequestParam("password") String password,
 			@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName,
 			@RequestParam("email") String email, @RequestParam("phone") String phone, @RequestParam("city") String city, @RequestParam("address") String address) {
 		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
@@ -95,6 +96,7 @@ public class HomeController {
 		Transaction tx = session.beginTransaction(); 
 
 		User newUser = new User();
+		newUser.setGoogleID(userId);
 		newUser.setUsername(username);
 		newUser.setPassword(password);
 		newUser.setFirstName(firstName);
