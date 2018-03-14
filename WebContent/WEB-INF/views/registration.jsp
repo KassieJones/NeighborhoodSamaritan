@@ -17,8 +17,8 @@
 
 
 	<div class="container">
-	<form>
-<input type="hidden" name="id" value="${userId}">
+	<form action="registrationsuccess" method="post">
+		<input type="hidden" name="id" value="${userId}">
 	    <label for="uName"><b>User Name</b></label><br>
 		<input type="text" placeholder="Enter User Name" name="username" required><br>
 		
