@@ -40,29 +40,20 @@ public class SearchController {
 	}
 
 	@RequestMapping("/results")
-	// this is listing all the data from the product class
+
 	public ModelAndView helloWorld(@RequestParam ("city") String city) {
 
 		ArrayList<Task> taskList = listAllTasks();
 		ArrayList<Task> localList = new ArrayList<Task>();
-
-		//localList.addAll(taskList);
 		
 		for (int i = 0; i < taskList.size(); i++) {
 			
-			if (taskList.get(i).getCity().equalsIgnoreCase(city)) {	
+			if ((taskList.get(i).getCity().equalsIgnoreCase(city)) && (taskList.get(i).getStatus().equalsIgnoreCase("a"))) {	
 				localList.add(taskList.get(i));		
 			}
-//			if (localList.get(i).getCity().equalsIgnoreCase(city)) {
-//				
-//				localList.add(k);
-//				
-//			}
+
 		}
-		// Iterator itr = localList.iterator();
-		// while (itr.hasNext()) {
-		// System.out.println(itr.next());
-		// }
+		
 		return new ModelAndView("results", "localList", localList);
 	}
 	private ArrayList<Task> listAllTasks() throws HibernateException {
@@ -75,7 +66,6 @@ public class SearchController {
 		ArrayList<Task> taskList = (ArrayList<Task>) crit.list();
 		System.out.println(taskList.size());
 
-		// model.addAttribute("specificItem", charList.get(2).getName());
 		tx.commit();
 		session.close();
 		return taskList;

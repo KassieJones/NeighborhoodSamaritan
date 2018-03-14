@@ -1,5 +1,7 @@
 package com.gc.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -8,7 +10,7 @@ import javax.persistence.Table;
 @Entity // marks the class as a hibernate entity (mapped class)
 @Table(name = "task") // maps the class to the DB table specified by the name modifier
 
-public class Task {
+public class Task implements Serializable {
 	private int id;
 	private int taskId;
 	private String usernameHost;
@@ -20,7 +22,17 @@ public class Task {
 	private String title;
 	private String address;
 	private String email;
+	private String status;
 	
+	
+	@Id
+	@Column(name="Status")
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 	public Task() {
 		super();
 		// TODO Auto-generated constructor stub

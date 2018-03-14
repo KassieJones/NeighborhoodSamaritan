@@ -62,7 +62,10 @@ public class HomeController {
 	
 			return new ModelAndView("mainmenu", "userId", userId);
         }
+        
 		}
+		
+		
 
 	@RequestMapping("/welcome")
 	public ModelAndView welcomePage(HttpSession session) {

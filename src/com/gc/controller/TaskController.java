@@ -10,6 +10,7 @@ import org.hibernate.Transaction;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.gc.model.Task;
@@ -27,15 +28,20 @@ import com.gc.util.HibernateUtil;
 public class TaskController {
 	
 	@RequestMapping("/showallopps")
-	// this is listing all the data from the product class
+
 	public ModelAndView helloWorld(Model model) {
 System.out.println("showallopps");
-		// Configuration config = new Configuration().configure("hibernate.cfg.xml");
-		// ServiceRegistry serviceRegistry = new
-		// ServiceRegistryBuilder().applySettings(config.getProperties())
-		// .buildServiceRegistry();
+
 		ArrayList<Task> taskList = listAllTasks();
-		model.addAttribute("specificItem", taskList.get(2).getTitle());
+		
+		
+		for (int i = 0; i < taskList.size(); i++) {
+			
+			if (taskList.get(i).getStatus().equalsIgnoreCase("u")) {	
+				taskList.remove(taskList.get(i));		
+			}
+		}
+		
 
 		return new ModelAndView("showallopps", "taskList", taskList);
 	}
@@ -52,9 +58,34 @@ System.out.println("showallopps");
 		ArrayList<Task> taskList = (ArrayList<Task>) crit.list();
 		System.out.println(taskList.size());
 
-		//model.addAttribute("specificItem", charList.get(2).getName());
 		tx.commit();
 		session.close();
 		return taskList;
 	}
+	
+	@RequestMapping("showallopps2") 
+	public ModelAndView updateForm(@RequestParam("status") String status) {
+		
+		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+		Session session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction(); // the transaction represents the unit of work or the actual
+														// implemention of of our code
+
+		Task updateTask = new Task();
+		updateTask.setStatus(status);
+
+		
+		session.update(updateTask);
+		tx.commit();
+		session.close();
+		
+		
+		//ArrayList<Product> prodList = listAllProducts();
+		
+		return new ModelAndView("showallopps", "pList", "");
+	}
+	
+	
+	
+	
 }
