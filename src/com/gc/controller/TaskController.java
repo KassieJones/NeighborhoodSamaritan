@@ -99,4 +99,28 @@ System.out.println("showallopps");
 	
 	
 	
+	
+	@RequestMapping("deletetask")
+	public ModelAndView deleteProduct(@RequestParam("title") String title) {
+		
+		// temp object will store info for the object that we want to delete
+		Task temp = new Task();
+		temp.setTitle(title);
+		
+		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+		Session session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction(); // the transaction represents the unit of work or the actual
+														// implemention of of our code
+		
+		session.delete(temp);
+		tx.commit();
+		session.close();
+		
+		ArrayList<Task> userList = listAllTasks();
+		return new ModelAndView("welcome", "uList", userList);
+		
+	}
+	
+	
+	
 }

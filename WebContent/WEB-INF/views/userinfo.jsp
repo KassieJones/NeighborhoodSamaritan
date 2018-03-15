@@ -146,8 +146,50 @@ p {
 
 
 			</div>
+			<br>
+			<h2>Posted Tasks</h2>
+			<br>
+			
+			
+			
+<table border="1" align="center">
+				<tr>
+					<th>Title</th>
+					<th>Date</th>
+					<th>Time (Military Time)</th>
+					<th>Task Length (Hrs)</th>
+					<th>City</th>
+					<th> </th>
+					<th></th>
+				</tr>
 
+				<c:forEach var="myVar" items="${taskList}">
 
+					<tr>
+						<td>${myVar.usernameHost}</td>
+						<td>${myVar.title}</td>
+						<td>${myVar.date}</td>
+						<td>${myVar.time}</td>
+						<td>${myVar.estimatedTime}</td>
+						<td>${myVar.city}</td>
+						<td><a href="deletetask?title=${myVar.title}">Volunteer</a>
+		<!--  	<td><a href="update?id=${myVar.productID}">Update</a>  -->
+		
+		</tr>
+		
+		
+		</c:forEach>
+		
+	</table>
+			
+			
+			
+			
+<br>
+<form action="mainmenu.html">
+    <input type="submit" value="Return to Main Menu" />
+</form>
+<br><br>
 		</div>
 
 	</div>

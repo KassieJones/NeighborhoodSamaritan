@@ -4,17 +4,21 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import org.hibernate.Criteria;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.gc.model.Task;
 import com.gc.model.User;
 import com.gc.util.HibernateUtil;
 
@@ -111,7 +115,7 @@ public class HomeController {
 
 
 	@RequestMapping("userinfosend")
-	public ModelAndView accountPage(@RequestParam("uName") String user, @RequestParam("password") String password) {
+	public ModelAndView accountPage(Model model, @RequestParam("uName") String user, @RequestParam("password") String password) {
 		
 		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 		Session session = sessionFactory.openSession();
@@ -120,10 +124,40 @@ public class HomeController {
 		Criteria crit = session.createCriteria(User.class);
 		
         User user2 = (User) crit.add(Restrictions.eq("username",user)).uniqueResult();
+        
+        model.addAttribute("user2", user2);
+        
+        
+		ArrayList<Task> taskList = listAllTasks();
+		ArrayList<Task> userList = new ArrayList<Task>();
+		
+		for (int i = 0; i < taskList.size(); i++) {
+			
+			if ((taskList.get(i).getUsernameHost().equalsIgnoreCase(user))) {	
+				userList.add(taskList.get(i));		
+			}
+
+		}
+		
        
         
 
-		return new ModelAndView("userinfo", "user2", user2);
+		return new ModelAndView("userinfo", "userList", userList);
+	}
+	
+	private ArrayList<Task> listAllTasks() throws HibernateException {
+		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+
+		Session session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction(); // the transaction represents the unit of work or the actual
+														// implemention of of our code
+		Criteria crit = session.createCriteria(Task.class);
+		ArrayList<Task> taskList = (ArrayList<Task>) crit.list();
+		System.out.println(taskList.size());
+
+		tx.commit();
+		session.close();
+		return taskList;
 	}
 
 	@RequestMapping("/userinfo")
