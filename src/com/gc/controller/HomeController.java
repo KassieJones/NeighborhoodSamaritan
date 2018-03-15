@@ -5,9 +5,11 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -107,11 +109,28 @@ public class HomeController {
 
 	}
 
-	@RequestMapping("/userinfo")
-	public ModelAndView accountPage(@RequestParam("userId") String user) {
-		System.out.println(user);
 
-		return new ModelAndView("userinfo", "message", user);
+	@RequestMapping("userinfosend")
+	public ModelAndView accountPage(@RequestParam("uName") String user, @RequestParam("password") String password) {
+		
+		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+		Session session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		
+		Criteria crit = session.createCriteria(User.class);
+		
+        User user2 = (User) crit.add(Restrictions.eq("username",user)).uniqueResult();
+       
+        
+
+		return new ModelAndView("userinfo", "user2", user2);
+	}
+
+	@RequestMapping("/userinfo")
+	public ModelAndView userInfo() {
+		String message = "";
+
+		return new ModelAndView("userinfo", "message", "");
 	}
 
 	@RequestMapping("/submitrequest")

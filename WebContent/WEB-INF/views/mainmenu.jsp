@@ -105,6 +105,9 @@ ${success}
 <form action="submitrequest.html">
     <input type="submit" value="Submit a New Task Request" />
 </form><br>
+<form action="userinfo.html">
+    <input type="submit" value="User Info" />
+</form>
 <form action="donate.html">
     <input type="submit" value="Charity Hub" />
 </form>
