@@ -2,6 +2,7 @@ package com.gc.controller;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 import org.hibernate.Session;
@@ -14,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.gc.model.User;
 import com.gc.util.HibernateUtil;
-import com.mysql.jdbc.PreparedStatement;
+
 
 /**
  * 
@@ -129,7 +130,7 @@ public class HomeController {
 
 		Connection con = getDBConnection();
 		String sql = "update user set Hours=? where Hours=?";
-		PreparedStatement ps = (PreparedStatement) con.prepareStatement(sql);
+		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setInt(1, userHours + taskHours);
 		ps.executeUpdate();
 		con.close();
