@@ -15,7 +15,7 @@
 <link rel="shortcut icon"
 	href="https://files.slack.com/files-pri/T04UPFZ31-F9KERJV0T/finalprojecticon.png" />
 
-<style>
+<style>"WebContent/WEB-INF/views/showallopps.jsp"
 body {
 	background-color: #000816;
 }
@@ -90,7 +90,7 @@ p {
 		<div id="header">
 			<br>
 			<h1>HOOD SAMARITAN</h1>
-			<h2>Engage | Donate | Inspire</h2>
+			<h2>Volunteer  |  Donate  |  Support</h2>
 			<br>
 		</div>
 
@@ -107,7 +107,7 @@ p {
 					<th>Time (Military Time)</th>
 					<th>Task Length (Hrs)</th>
 					<th>City</th>
-					<th>ID</th>
+					<th> </th>
 					<th></th>
 				</tr>
 
@@ -120,7 +120,7 @@ p {
 						<td>${myVar.time}</td>
 						<td>${myVar.estimatedTime}</td>
 						<td>${myVar.city}</td>
-						<td>${myVar.id}</td>
+						<td><a href="taskaccepted?title=${myVar.title}">Volunteer</a>
 					</tr>
 				</c:forEach>
 			</table>

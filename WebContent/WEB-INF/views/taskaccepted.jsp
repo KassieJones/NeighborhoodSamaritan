@@ -88,21 +88,28 @@ p {
 		<div id="header">
 			<br>
 			<h1>HOOD SAMARITAN</h1>
-			<h2>Engage | Donate | Inspire</h2>
+			<h2>Volunteer  |  Donate  |  Support</h2>
 			<br>
 		</div>
 
 		<div id="content">
 			<br> <br> <br> <br> <br>
 
-<h3>Thank you for helping your neighbor!</h3>
+<h2>Volunteer Here</h2>
 
-<p>Please contact your host to arrange the details of your opportunity task.</p>
+
+<p>Please confirm your User Name and Password</p>
+<form action="send" method="post">
+	<input type="hidden" name="title" value="${title}" >
+User Name:<br><input type="text" placeholder="Enter User Name" name="uName" required><br>
+Password:<br><input type="password" placeholder="Enter Password" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"><br>
+		<input type="submit" value="Volunteer">
+	</form>
 
 
 
 <form action="mainmenu.html">
-    <input type="submit" value="Return" />
+    <input type="submit" value="Return to Main Menu" />
 </form>
 <br><br>
 </div>

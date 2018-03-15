@@ -91,7 +91,7 @@ p {
 		<div id="header">
 			<br>
 			<h1>HOOD SAMARITAN</h1>
-			<h2>Engage | Donate | Inspire</h2>
+			<h2>Volunteer  |  Donate  |  Support</h2>
 			<br>
 		</div>
 

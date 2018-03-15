@@ -27,6 +27,17 @@ import com.gc.util.HibernateUtil;
 @Controller
 public class TaskController {
 	
+	@RequestMapping("/taskaccepted") 
+		public ModelAndView taskAccepted(@RequestParam("title") String title) {
+		
+		
+		
+			
+			return new ModelAndView ("taskaccepted", "title", title);
+		}
+		
+		
+	
 	@RequestMapping("/showallopps")
 
 	public ModelAndView helloWorld(Model model) {
