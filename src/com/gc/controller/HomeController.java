@@ -141,9 +141,9 @@ public class HomeController {
 
 	private Connection getDBConnection() throws ClassNotFoundException, SQLException {
 		// prep for step # 3
-		String url = "jdbc:mysql://localhost:3306/neighborhoodsamaritan";
-		String userName = "root";
-		String password = "Michelle2010";
+		String url = "jdbc:mysql://gcdatabase.cevm739keqxu.us-east-2.rds.amazonaws.com:3306/neighborhoodsamaritan";
+		String userName = "finalproject";
+		String password = "javaGC2018";
 
 		// Step #2: Load and Register Driver
 		Class.forName("com.mysql.jdbc.Driver");
