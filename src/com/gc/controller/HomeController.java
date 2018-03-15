@@ -1,25 +1,23 @@
 package com.gc.controller;
 
-import java.util.ArrayList;
-
-import javax.servlet.http.HttpSession;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 import org.hibernate.Criteria;
-import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.gc.model.User;
 import com.gc.util.HibernateUtil;
+
 
 /**
  * 
@@ -31,45 +29,38 @@ import com.gc.util.HibernateUtil;
 
 public class HomeController {
 
+	@RequestMapping("/mainmenu")
 
-		@RequestMapping("/mainmenu")
+	public ModelAndView menuPage() {
 
-		public ModelAndView menuPage() {
+		// SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+		// Session session = sessionFactory.openSession();
+		// Transaction tx = session.beginTransaction();
+		//
+		// Criteria crit = session.createCriteria(User.class);
+		// crit.add(Restrictions.eq("googleID",userId));
+		//
+		// User user = (User) crit.uniqueResult();
+		// session.getTransaction().commit();
+		//
+		// if(user==null) {
+		// System.out.print(userId);
+		// return new ModelAndView("registration", "userId", userId);
+		//
+		// } else {
+		//
+		//
+		//
+		//
+		// System.out.println(idToken);
+		// System.out.print(userId);
 
-//		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-//		Session session = sessionFactory.openSession();
-//		Transaction tx = session.beginTransaction();
-//		
-//		Criteria crit = session.createCriteria(User.class);
-//        crit.add(Restrictions.eq("googleID",userId));
-//
-//        User user = (User) crit.uniqueResult();
-//        session.getTransaction().commit();
-//        
-//        if(user==null) {
-//        	System.out.print(userId);
-//        	return new ModelAndView("registration", "userId", userId);
-//        	
-//        } else {
-//        
-//
-//			
-//
-//			System.out.println(idToken);
-//			System.out.print(userId);
-
-			
-	
-			return new ModelAndView("mainmenu", "", "");
-        }
-        
-		
+		return new ModelAndView("mainmenu", "", "");
+	}
 
 	@RequestMapping("/welcome")
 	public ModelAndView welcomePage() {
 		String message = "";
-		
-		
 
 		return new ModelAndView("welcome", "message", message);
 	}
@@ -89,15 +80,17 @@ public class HomeController {
 	}
 
 	@RequestMapping("registrationsuccess")
-	public ModelAndView addNewUser(/*@RequestParam("id") String userId, */@RequestParam("username") String username, @RequestParam("password") String password,
-			@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName,
-			@RequestParam("email") String email, @RequestParam("phone") String phone, @RequestParam("city") String city, @RequestParam("address") String address, @RequestParam("charityPref") String charityPref) {
+	public ModelAndView addNewUser(/* @RequestParam("id") String userId, */@RequestParam("username") String username,
+			@RequestParam("password") String password, @RequestParam("firstName") String firstName,
+			@RequestParam("lastName") String lastName, @RequestParam("email") String email,
+			@RequestParam("phone") String phone, @RequestParam("city") String city,
+			@RequestParam("address") String address, @RequestParam("charityPref") String charityPref) {
 		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 		Session session = sessionFactory.openSession();
-		Transaction tx = session.beginTransaction(); 
+		Transaction tx = session.beginTransaction();
 
 		User newUser = new User();
-	//	newUser.setGoogleID(userId);
+		// newUser.setGoogleID(userId);
 		newUser.setUsername(username);
 		newUser.setPassword(password);
 		newUser.setFirstName(firstName);
@@ -132,6 +125,7 @@ public class HomeController {
 
 		return new ModelAndView("userinfo", "user2", user2);
 	}
+
 	@RequestMapping("/userinfo")
 	public ModelAndView userInfo() {
 		String message = "";
@@ -145,19 +139,37 @@ public class HomeController {
 
 		return new ModelAndView("submitrequest", "message", message);
 	}
+
 	
 	
+	
+	@RequestMapping("/addhours")
+	public ModelAndView acceptedPage(@RequestParam("taskHours") int taskHours, @RequestParam("userHours") int userHours)
+			throws ClassNotFoundException, SQLException {
 
-	@RequestMapping("/taskaccepted")
-	public ModelAndView acceptedPage() {
-		String message = "";
+		Connection con = getDBConnection();
+		String sql = "update user set Hours=? where Hours=?";
+		PreparedStatement ps = con.prepareStatement(sql);
+		ps.setInt(1, userHours + taskHours);
+		ps.executeUpdate();
+		con.close();
+		
 
-		return new ModelAndView("taskaccepted", "message", message);
+		return new ModelAndView("userProfile", "success", userHours);
 	}
-	@RequestMapping("/payment")
-	public ModelAndView paymentPage() {
-		String message = "";
 
-		return new ModelAndView("payment", "message", message);
+	private Connection getDBConnection() throws ClassNotFoundException, SQLException {
+		// prep for step # 3
+		String url = "jdbc:mysql://localhost:3306/neighborhoodsamaritan";
+		String userName = "root";
+		String password = "Michelle2010";
+
+		// Step #2: Load and Register Driver
+		Class.forName("com.mysql.jdbc.Driver");
+
+		// Step #3: Create Connection
+		Connection con = DriverManager.getConnection(url, userName, password);
+		return con;
 	}
+
 }

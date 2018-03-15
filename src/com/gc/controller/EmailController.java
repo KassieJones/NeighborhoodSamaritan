@@ -32,7 +32,7 @@ import com.mailjet.client.resource.Emailv31;
 public class EmailController {
 	@RequestMapping("/send")
 	
-	public ModelAndView sendEmail(@RequestParam ("doerEmail") String doerEmail, @RequestParam ("charityPref") String charityPref, @RequestParam ("doerPhone") String doerPhone, @RequestParam ("id") int id) throws MailjetException, MailjetSocketTimeoutException{
+	public ModelAndView sendEmail(@RequestParam ("uName") String uName, @RequestParam ("title") String title) throws MailjetException, MailjetSocketTimeoutException{
 		
 		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 		Session session = sessionFactory.openSession();
@@ -40,21 +40,24 @@ public class EmailController {
 		
 //		Query query = session.createQuery("SELECT usernameHost FROM task WHERE id=1007");
 		Criteria crit = session.createCriteria(Task.class);
-		crit.add(Restrictions.eq("id", id));
-		//query.setParameter("i", id);
+		crit.add(Restrictions.eq("title", title));
 		
-		
+		Criteria crit2 = session.createCriteria(User.class);
+		crit2.add(Restrictions.eq("username", uName));
 		
 		Task task_test = (Task) crit.uniqueResult();
 		String hostName = task_test.getUsernameHost();
 		String hostEmail = task_test.getEmail();
+		
+		User user_test = (User) crit2.uniqueResult();
+		String doerPhone = user_test.getPhone();
+		String doerEmail = user_test.getEmail();
+		String charityPref = user_test.getCharityPref();
 		tx.commit();
 		session.close();
 		
-		
 System.out.println(doerEmail);
 System.out.println(doerPhone);
-System.out.println(id);
 System.out.println(hostEmail);
 System.out.println(hostName);
 System.out.println(charityPref);

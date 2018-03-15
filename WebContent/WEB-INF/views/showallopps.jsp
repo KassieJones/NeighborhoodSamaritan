@@ -15,7 +15,7 @@
 <link rel="shortcut icon"
 	href="https://files.slack.com/files-pri/T04UPFZ31-F9KERJV0T/finalprojecticon.png" />
 
-<style>
+<style>"WebContent/WEB-INF/views/showallopps.jsp"
 body {
 	background-color: #000816;
 }
@@ -90,7 +90,7 @@ p {
 		<div id="header">
 			<br>
 			<h1>HOOD SAMARITAN</h1>
-			<h2>Engage | Donate | Inspire</h2>
+			<h2>Volunteer  |  Donate  |  Support</h2>
 			<br>
 		</div>
 
@@ -107,7 +107,7 @@ p {
 					<th>Time (Military Time)</th>
 					<th>Task Length (Hrs)</th>
 					<th>City</th>
-					<th>ID</th>
+					<th> </th>
 					<th></th>
 				</tr>
 
@@ -120,22 +120,13 @@ p {
 						<td>${myVar.time}</td>
 						<td>${myVar.estimatedTime}</td>
 						<td>${myVar.city}</td>
-						<td>${myVar.id}</td>
+						<td><a href="taskaccepted?title=${myVar.title}">Volunteer</a>
 					</tr>
 				</c:forEach>
 			</table>
 
 <br><br>
-<h2>Volunteer Here</h2>
-<br>
-	<form action="send" method="post">
-Enter Task ID for Volunteer Opportunity:<br> <input type="text" name="id"><br>
-Confirm Your Email:<br> <input type="text" name="doerEmail"><br>
-Confirm Your Phone Number:<br> <input type="text" name="doerPhone"><br>
-Enter Your Preferred Charity:<br> <input type="text" name="charityPref"><br>
-		<input type="submit" value="Submit Request">
-	</form>
-			<br> <br>
+
 			<form action="mainmenu.html">
 				<input type="submit" value="Return" />
 			</form>
