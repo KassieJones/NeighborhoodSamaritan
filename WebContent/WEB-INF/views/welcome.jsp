@@ -94,7 +94,7 @@ p {
 
 		<div id="content">
 			<br> <br> <br> <br> <br>
-<h1>Welcome!</h1>
+<h2>Welcome!</h2>
 	<form action="mainmenu" method="post">
 	<div class="container">
 	    <label for="uName"><b>User Name</b></label><br>

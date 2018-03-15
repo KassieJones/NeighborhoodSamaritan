@@ -94,7 +94,7 @@ p {
 
 		<div id="content">
 			<br> <br> <br> <br> <br>
-<h3>Search by Location</h3>
+<h2>Search by Location</h2>
 
 <form action="results">
 Enter a city:<input type="text" name="city" />

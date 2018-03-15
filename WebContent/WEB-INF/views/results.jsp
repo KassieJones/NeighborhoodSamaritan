@@ -96,7 +96,7 @@ p {
 
 		<div id="content">
 			<br> <br> <br> <br> <br>
-			<h3>Task Opportunity Results</h3>
+			<h2>Task Opportunity Results</h2>
 			<br>
 
 			<table border="1" align="center">
@@ -125,7 +125,9 @@ p {
 				</c:forEach>
 			</table>
 
-
+<br><br>
+<h2>Volunteer Here</h2>
+<br>
 
 	<form action="send" method="post">
 Enter Task ID for Volunteer Opportunity:<br> <input type="text" name="id"><br>

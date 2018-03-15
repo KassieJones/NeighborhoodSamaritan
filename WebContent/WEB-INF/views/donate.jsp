@@ -9,7 +9,7 @@
 
 <head>
 
-<title>Donation Options</title>
+<title>Charity Hub</title>
 
 
 
@@ -124,15 +124,15 @@ p {
 
 		
 
-<h3>Donation Options</h3>
-<br>
-<h4>Thank you for engaging with your community through Hood Samaritan</h4>
 <br>
 <br>
+<h2>Thank you for engaging with your community through Hood Samaritan</h2>
 <br>
+<p>It is our sincere hope and mission to inspire individuals to engage with their surroundings in many ways.  Below is a list of well-known charities for you to consider donating to on behalf of your volunteer.  Your volunteer's preferred charity was sent to you in your email, in the envent you are inspired to give.
+</p>
+<h3>Don't see your volunteer's preferred charity listed, or did your volunteer not specify a preference?<br>That's ok!<br>Click <a href="https://www.charitynavigator.org/">here</a> to find one that you are excited about!</h3>
 <br>
-<br>
-<h3>Popular Charities and EIN numbers</h3>
+<h2>Popular Charities and EIN numbers</h2>
 <br>
 <table border="1" align="center">
 <c:forEach var="myVar" items="${charList}">
@@ -142,12 +142,8 @@ p {
 </tr>
 </c:forEach>
 </table>
-<br>
-<br>
-
-If you don't see your preferred organization in the list above, or you would like to verify any of these please visit <a href="https://www.charitynavigator.org/">Charity Navigator</a>.
-
-<br>
+<h3>Feeling inspired and ready to engage?<br>Head over to <a href="https://www.charitynavigator.org/">Charity Navigator</a> to make your donation!
+</h3>
 <br>
 <form action="mainmenu.html">
     <input type="submit" value="Return" />

@@ -95,7 +95,7 @@ ${success}
 
 		<div id="content">
 			<br> <br> <br> <br> <br>
-<h3>Main Menu</h3>
+<h2>Main Menu</h2>
 <form action="showallopps.html">
     <input type="submit" value="See all Opportunities" />
 </form>
@@ -105,11 +105,8 @@ ${success}
 <form action="submitrequest.html">
     <input type="submit" value="Submit a New Task Request" />
 </form><br>
-<form action="userinfo.html">
-    <input type="submit" value="User Info" />
-</form>
 <form action="donate.html">
-    <input type="submit" value="Donate Here" />
+    <input type="submit" value="Charity Hub" />
 </form>
 
 <br><br>

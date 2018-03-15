@@ -34,41 +34,39 @@ public class HomeController {
 
 		@RequestMapping("/mainmenu")
 
-		public ModelAndView menuPage(@RequestParam ("idToken") String idToken,@RequestParam("userId") String userId) {
+		public ModelAndView menuPage() {
 
-		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-		Session session = sessionFactory.openSession();
-		Transaction tx = session.beginTransaction();
-		
-		Criteria crit = session.createCriteria(User.class);
-        crit.add(Restrictions.eq("googleID",userId));
-
-        User user = (User) crit.uniqueResult();
-        session.getTransaction().commit();
-        
-        if(user==null) {
-        	System.out.print(userId);
-        	return new ModelAndView("registration", "userId", userId);
-        	
-        } else {
-        
-
-			
-
-			System.out.println(idToken);
-			System.out.print(userId);
+//		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+//		Session session = sessionFactory.openSession();
+//		Transaction tx = session.beginTransaction();
+//		
+//		Criteria crit = session.createCriteria(User.class);
+//        crit.add(Restrictions.eq("googleID",userId));
+//
+//        User user = (User) crit.uniqueResult();
+//        session.getTransaction().commit();
+//        
+//        if(user==null) {
+//        	System.out.print(userId);
+//        	return new ModelAndView("registration", "userId", userId);
+//        	
+//        } else {
+//        
+//
+//			
+//
+//			System.out.println(idToken);
+//			System.out.print(userId);
 
 			
 	
-			return new ModelAndView("mainmenu", "userId", userId);
+			return new ModelAndView("mainmenu", "", "");
         }
         
-		}
-		
 		
 
 	@RequestMapping("/welcome")
-	public ModelAndView welcomePage(HttpSession session) {
+	public ModelAndView welcomePage() {
 		String message = "";
 		
 		
@@ -91,7 +89,7 @@ public class HomeController {
 	}
 
 	@RequestMapping("registrationsuccess")
-	public ModelAndView addNewUser(@RequestParam("id") String userId, @RequestParam("username") String username, @RequestParam("password") String password,
+	public ModelAndView addNewUser(/*@RequestParam("id") String userId, */@RequestParam("username") String username, @RequestParam("password") String password,
 			@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName,
 			@RequestParam("email") String email, @RequestParam("phone") String phone, @RequestParam("city") String city, @RequestParam("address") String address, @RequestParam("charityPref") String charityPref) {
 		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
@@ -99,7 +97,7 @@ public class HomeController {
 		Transaction tx = session.beginTransaction(); 
 
 		User newUser = new User();
-		newUser.setGoogleID(userId);
+	//	newUser.setGoogleID(userId);
 		newUser.setUsername(username);
 		newUser.setPassword(password);
 		newUser.setFirstName(firstName);

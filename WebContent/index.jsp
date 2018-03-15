@@ -122,7 +122,7 @@ p {
 		</div>
 
 	</div>
-<!-- START OF GOOGLE OAUTH CODE -->
+<!-- START OF GOOGLE OAUTH CODE
 	<script>
   var GoogleAuth;
   var SCOPE = 'https://www.googleapis.com/auth/userinfo.profile';
@@ -234,6 +234,6 @@ p {
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()"
 	onreadystatechange="if (this.readyState === 'complete') this.onload()">
-</script>
+</script> -->
 </body>
 </html>

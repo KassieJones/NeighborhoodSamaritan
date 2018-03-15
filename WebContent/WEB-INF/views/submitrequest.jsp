@@ -94,7 +94,7 @@ p {
 
 		<div id="content">
 			<br> <br> <br> <br> <br>
-<h1>Submit a New Request</h1>
+<h2>Submit a New Request</h2>
 <br>
 <p>Please enter the information associated with your request.</p>
 <br>
