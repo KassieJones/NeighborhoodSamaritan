@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>User Info</title>
+<title>Welcome to Hood Samaritan</title>
+
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -49,10 +49,6 @@ p {
 	color: white;
 }
 
-th{
-	color: white;
-}
-
 #container {
 	border: 0px solid;
 	max-width: 840px;
@@ -78,7 +74,8 @@ th{
 }
 
 #content {
-	text-align: center; width : 100%;
+	text-align: center;
+	width: 100%;
 	background-color: #EDAE49;
 	overflow-x: hidden;
 	clear: both;
@@ -89,50 +86,71 @@ th{
 </style>
 </head>
 <body>
-<form action="userinfosend" method="post">
-	<div class="container">
-	    <label for="uName"><b>User Name</b></label><br>
-		<input type="text" placeholder="Enter User Name" name="uName" required><br>
-		
-		<label for="password"><b>Password</b></label><br>
-		<input type="password" placeholder="Enter Password" name="password" required><br><br>
-		
-		<input type="submit" value="Sign-In">
-		
-		</div>
-	</form>
-<div>
-			<br> <br> <br> <br> <br>
-			<h3>User Info</h3>
-		
+	<div id="container">
+		<div id="header">
 			<br>
-			<table style="width:100%">
-<tr>
-				<th>User Name</th>
-				<th>${user2.username}</th></tr>
-				<tr>
-				<th>Name</th>
-				<th>${user2.firstName} ${user2.lastName}</th>
-				</tr>
-				<tr>
-				<th>Email</th>
-				<th>${user2.email}</th>
-				</tr>
-				<tr>
-				<th>Phone</th>
-				<th>${user2.phone}</th>
-				</tr>
-				<tr>
-				<th>Address</th>
-				<th>${user2.address}</th>
-				</tr>
-				<tr>
-				<th>Hours Donated</th>
-				<th>${user2.hours}</th>
-				</tr>
-</table>
-				
-			
-</div>
+			<h1>HOOD SAMARITAN</h1>
+			<h2>Volunteer  |  Donate  |  Support</h2>
+			<br>
+		</div>
+
+		<div id="content">
+			<br> <br> <br> <br> <br>
+
+	<h2>User Account</h2>
+	<p>Please confirm your login information</p>
+			<form action="userinfosend" method="post">
+				<div class="container">
+					<label for="uName"><b>User Name</b></label><br> <input
+						type="text" placeholder="Enter User Name" name="uName" required><br>
+
+					<label for="password"><b>Password</b></label><br> <input
+						type="password" placeholder="Enter Password" name="password"
+						required><br>
+					<br> <input type="submit" value="Confirm">
+
+				</div>
+			</form>
+			<div>
+			<br>
+			<h2>User Information</h2>
+				<br> <br>
+
+				<br>
+				<table style="width: 100%">
+					<tr>
+						<th>User Name</th>
+						<th>${user2.username}</th>
+					</tr>
+					<tr>
+						<th>Name</th>
+						<th>${user2.firstName}${user2.lastName}</th>
+					</tr>
+					<tr>
+						<th>Email</th>
+						<th>${user2.email}</th>
+					</tr>
+					<tr>
+						<th>Phone</th>
+						<th>${user2.phone}</th>
+					</tr>
+					<tr>
+						<th>Address</th>
+						<th>${user2.address}</th>
+					</tr>
+					<tr>
+						<th>Hours Donated</th>
+						<th>${user2.hours}</th>
+					</tr>
+				</table>
+
+
+			</div>
+
+
+		</div>
+
+	</div>
+		
 </body>
 </html>
