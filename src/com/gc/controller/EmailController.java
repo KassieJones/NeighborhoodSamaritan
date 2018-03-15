@@ -40,10 +40,10 @@ public class EmailController {
 		
 //		Query query = session.createQuery("SELECT usernameHost FROM task WHERE id=1007");
 		Criteria crit = session.createCriteria(Task.class);
-		crit.add(Restrictions.eq("Title", title));
+		crit.add(Restrictions.eq("title", title));
 		
 		Criteria crit2 = session.createCriteria(User.class);
-		crit2.add(Restrictions.eq("Username", uName));
+		crit2.add(Restrictions.eq("username", uName));
 		
 		Task task_test = (Task) crit.uniqueResult();
 		String hostName = task_test.getUsernameHost();
