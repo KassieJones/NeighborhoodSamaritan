@@ -117,11 +117,26 @@ public class HomeController {
 	}
 
 
-	@RequestMapping("/userinfo")
-	public ModelAndView accountPage(@RequestParam("userId") String user) {
-		System.out.println(user);
+	@RequestMapping("userinfosend")
+	public ModelAndView accountPage(@RequestParam("uName") String user, @RequestParam("password") String password) {
+		
+		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+		Session session = sessionFactory.openSession();
+		Transaction tx = session.beginTransaction();
+		
+		Criteria crit = session.createCriteria(User.class);
+		
+        User user2 = (User) crit.add(Restrictions.eq("username",user)).uniqueResult();
+       
+        
 
-		return new ModelAndView("userinfo", "message", user);
+		return new ModelAndView("userinfo", "user2", user2);
+	}
+	@RequestMapping("/userinfo")
+	public ModelAndView userInfo() {
+		String message = "";
+
+		return new ModelAndView("userinfo", "message", "");
 	}
 
 	@RequestMapping("/submitrequest")
