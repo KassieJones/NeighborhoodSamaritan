@@ -127,8 +127,8 @@ public class HomeController {
         
         model.addAttribute("user2", user2);
         
-        
-		ArrayList<Task> taskList = listAllTasks();
+     	
+        ArrayList<Task> taskList = listAllTasks();
 		ArrayList<Task> userList = new ArrayList<Task>();
 		
 		for (int i = 0; i < taskList.size(); i++) {
@@ -140,8 +140,6 @@ public class HomeController {
 		}
 		
        
-        
-
 		return new ModelAndView("userinfo", "userList", userList);
 	}
 	

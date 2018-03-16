@@ -163,17 +163,16 @@ p {
 					<th></th>
 				</tr>
 
-				<c:forEach var="myVar" items="${taskList}">
+				<c:forEach var="myVar" items="${userList}">
 
 					<tr>
-						<td>${myVar.usernameHost}</td>
 						<td>${myVar.title}</td>
 						<td>${myVar.date}</td>
 						<td>${myVar.time}</td>
 						<td>${myVar.estimatedTime}</td>
 						<td>${myVar.city}</td>
-						<td><a href="deletetask?title=${myVar.title}">Volunteer</a>
-		<!--  	<td><a href="update?id=${myVar.productID}">Update</a>  -->
+					<td><a href="deletetask?title=${myVar.title}">Delete</a>
+		 <!--  	<td><a href="update?id=${myVar.productID}">Update</a>  -->
 		
 		</tr>
 		

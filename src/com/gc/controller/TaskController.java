@@ -45,13 +45,13 @@ System.out.println("showallopps");
 
 		ArrayList<Task> taskList = listAllTasks();
 		
-		
-		for (int i = 0; i < taskList.size(); i++) {
-			
-			if (taskList.get(i).getStatus().equalsIgnoreCase("u")) {	
-				taskList.remove(taskList.get(i));		
-			}
-		}
+//		
+//		for (int i = 0; i < taskList.size(); i++) {
+//			
+//			if (taskList.get(i).getStatus().equalsIgnoreCase("u")) {	
+//				taskList.remove(taskList.get(i));		
+//			}
+//		}
 		
 
 		return new ModelAndView("showallopps", "taskList", taskList);
@@ -83,7 +83,7 @@ System.out.println("showallopps");
 														// implemention of of our code
 
 		Task updateTask = new Task();
-		updateTask.setStatus(status);
+		//updateTask.setStatus(status);
 
 		
 		session.update(updateTask);

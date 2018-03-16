@@ -48,7 +48,7 @@ public class SearchController {
 		
 		for (int i = 0; i < taskList.size(); i++) {
 			
-			if ((taskList.get(i).getCity().equalsIgnoreCase(city)) && (taskList.get(i).getStatus().equalsIgnoreCase("a"))) {	
+			if (taskList.get(i).getCity().equalsIgnoreCase(city)) {	
 				localList.add(taskList.get(i));		
 			}
 

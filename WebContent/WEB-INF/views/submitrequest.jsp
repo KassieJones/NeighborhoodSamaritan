@@ -101,8 +101,8 @@ p {
 	<form action="submitsuccess" method="post">
 		Title:<br> <input type="text" name="title" required><br>
 		Username:<br> <input type="text" name="usernameHost" required><br>
-		Date:<br> <input type="text" name="date" required><br>
-		Time:<br> <input type="text" name="time" required><br>
+		Date:(YYYY-MM-DD)<br> <input type="text" name="date" required><br>
+		Time:(24:00-Military Time)<br> <input type="text" name="time" required><br>
 		Estimated Job Length:<br> <input type="text" name="estimatedTime" required><br>
 		Required Skills:<br> <input type="text" name="skillsNeeded" required><br>
 		Address:<br> <input type="text" name="address" required><br>

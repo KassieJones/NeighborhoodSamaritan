@@ -22,17 +22,17 @@ public class Task implements Serializable {
 	private String title;
 	private String address;
 	private String email;
-	private String status;
+	//private String status;
 	
 	
-	@Id
-	@Column(name="Status")
-	public String getStatus() {
-		return status;
-	}
-	public void setStatus(String status) {
-		this.status = status;
-	}
+//	@Id
+//	@Column(name="Status")
+//	public String getStatus() {
+//		return status;
+//	}
+//	public void setStatus(String status) {
+//		this.status = status;
+//	}
 	public Task() {
 		super();
 		// TODO Auto-generated constructor stub
